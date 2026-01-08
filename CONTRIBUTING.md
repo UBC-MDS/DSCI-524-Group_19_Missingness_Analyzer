@@ -33,7 +33,7 @@ If you encounter bugs or want to request features, please open an issue on GitHu
 
 ## Code of Conduct
 
-By contributing, you agree to abide by our [Code of Conduct](mainlink), which outlines expected behavior within this community.
+By contributing, you agree to abide by our [Code of Conduct](https://github.ubc.ca/roccolee/DSCI_524_Group_19_Missingness_Analyzer/blob/main/CODE_OF_CONDUCT.md), which outlines expected behavior within this community.
 
 ## Need Help?
 
