@@ -1,4 +1,4 @@
-# DSCI_524_Group_19_Missingness_Analyzer Code of Conduct
+# Group 19 Code of Conduct
 
 This Code of Conduct outlines our commitment to fostering a positive, inclusive, and respectful environment for all members of Group 19. It includes:
 
