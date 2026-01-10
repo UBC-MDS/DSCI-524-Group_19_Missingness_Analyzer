@@ -1,6 +1,6 @@
 def missing_how_type_(df):
     """
-    Print out the number of missing data in the data set, and also identify and print out the type of missigness.
+    Print out a report that contain the number of missing data in the data set, and also identify and print out the type of missigness.
     There are 3 types of missingness: Missing completely at random (MCAR), 
     Missing at random (MAR), Missing Not at random (MNAR)
 
