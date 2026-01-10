@@ -22,9 +22,9 @@ Missing data imputation/handling is one of the most common forms of data cleanin
 
   * This function takes in the dataset and the type of missingness and passes those to a logistic regression algorithm which attempts to suggest an imputation strategy that would be best suited
 
-* generate\_missing\_report
+* missing\_correlation\_matrix
 
-  * This function calculates the total number of missing values ​​and the percentage of missing values ​​in each column of the input pandas DataFrame.
+  * This function builds a correlation matrix of 0/1 missingness indicators for each column in a pandas DataFrame, so user can see which variables tend to be missing together and diagnose possible shared causes.
 
 ## **Python Ecosystem**
 
