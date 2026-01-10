@@ -14,13 +14,17 @@ Missing data imputation/handling is one of the most common forms of data cleanin
 
 ## **List of Functions**
 
-* <Function 1 Name Here>
+* type\_of\_missing\_and\_how
 
   * This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)
 
 * suggest\_imputation
 
   * This function takes in the dataset and the type of missingness and passes those to a logistic regression algorithm which attempts to suggest an imputation strategy that would be best suited
+
+* missing\_correlation\_matrix
+
+  * This function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness
 
 ## **Python Ecosystem**
 
