@@ -1,6 +1,10 @@
+import sys
+from pathlib import Path
 import pandas as pd
 import numpy as np
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(ROOT / "src"))
 from missingness_analyzer.missing_correlation_matrix import (missing_correlation_matrix,)
 
 def test_missing_corr_returns_dataframe():
@@ -27,5 +31,5 @@ def test_missing_corr_diagonal():
     df = pd.read_csv("tests/synthetic_dataset.csv")
 
     result = missing_correlation_matrix(df)
-
     assert np.allclose(np.diag(result.values), 1.0)
+
