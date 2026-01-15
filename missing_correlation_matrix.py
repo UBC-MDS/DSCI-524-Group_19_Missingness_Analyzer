@@ -1,10 +1,12 @@
 def missing_correlation_matrix(df):
     """
-    This function converts each column of the input pandas DataFrame into a
-    binary indicator of missingness, and then calculates the correlation matrix 
-    of these indicators. The resulting matrix highlights which variables tend 
-    to be missing together, which helps to reveal joint missingness patterns that 
-    may point to common data collection issues or underlying mechanisms.
+    Calculate correlations between variables' missingness patterns.
+
+    For each column in `df`, this function constructs a binary indicator
+    (1 = value is missing, 0 = value is observed) and computes the
+    pairwise correlation matrix of these indicators. High positive
+    correlations flag variables that tend to be missing at the same time,
+    which can reveal shared data-collection issues or common missingness mechanisms.
 
     Parameters
     df : pd.DataFrame
