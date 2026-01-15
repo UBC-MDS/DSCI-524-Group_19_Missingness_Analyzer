@@ -18,13 +18,25 @@ Missing data imputation/handling is one of the most common forms of data cleanin
 
   * This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)
 
+* test_type_of_missing_and_how
+
+  * This function contains unit tests for the "type_of_missing_and_how" function
+
 * suggest\_imputation
 
-  * This function takes in the dataset and the type of missingness and passes those to a logistic regression algorithm which attempts to suggest an imputation strategy that would be best suited
+  * This function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.
+
+* test_suggest_imputation
+
+  * This function contains unit tests for the "suggest_imputation" function
 
 * missing\_correlation\_matrix
 
   * This function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness
+
+* test_missing_correlation_matrix
+
+  * This function contains unit tests for the "missing_correlation" function
 
 ## **Python Ecosystem**
 
