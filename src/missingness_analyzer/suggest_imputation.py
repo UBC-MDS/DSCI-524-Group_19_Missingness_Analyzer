@@ -48,7 +48,8 @@ def suggest_imputation(df, missingness_type = None):
         return {
             'method': 'none',
             'reasoning': ['No missing data detected'],
-            'warnings': []
+            'warnings': [],
+            'missingness_amount': 0
         }
 
     # Calculate overall missing percentage
