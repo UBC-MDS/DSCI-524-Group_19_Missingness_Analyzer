@@ -1,21 +1,31 @@
 import pandas as pd
 import numpy as np
 
-from missingness_analyzer.missing_correlation_matrix import missing_correlation_matrix  
+from missingness_analyzer.missing_correlation_matrix import (missing_correlation_matrix,)
 
-
-def test_missing_corr_basic_shape_and_labels():
-    df = pd.DataFrame(
-        {
-            "a": [1, None, 3, None],
-            "b": [None, 2, 3, 4],
-            "c": [1, 2, 3, 4]
-        }
-    )
+def test_missing_corr_returns_dataframe():
+    """Result should be a pandas DataFrame when using synthetic_dataset."""
+    df = pd.read_csv("tests/synthetic_dataset.csv")
 
     result = missing_correlation_matrix(df)
 
     assert isinstance(result, pd.DataFrame)
-    assert list(result.index) == ["a", "b", "c"]
-    assert list(result.columns) == ["a", "b", "c"]
+
+
+def test_missing_corr_labels_match_input():
+    """Row and column labels should match column names of synthetic_dataset."""
+    df = pd.read_csv("tests/synthetic_dataset.csv")
+
+    result = missing_correlation_matrix(df)
+
+    assert list(result.index) == list(df.columns)
+    assert list(result.columns) == list(df.columns)
+
+
+def test_missing_corr_diagonal():
+    """Diagonal entries should be 1 for each variable's own missingness."""
+    df = pd.read_csv("tests/synthetic_dataset.csv")
+
+    result = missing_correlation_matrix(df)
+
     assert np.allclose(np.diag(result.values), 1.0)
