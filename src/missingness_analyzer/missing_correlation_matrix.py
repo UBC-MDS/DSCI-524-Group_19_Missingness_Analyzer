@@ -1,3 +1,4 @@
+import warnings
 def missing_correlation_matrix(df):
     """
     Calculate correlations between variables' missingness patterns.
@@ -19,7 +20,11 @@ def missing_correlation_matrix(df):
         variables, and whose entries give the correlation between their
         missingness indicators.
     """
-    missing_indicators = df.isna().astype(float)
-    corr_matrix = missing_indicators.corr()
-    corr_matrix = corr_matrix.loc[df.columns, df.columns]
-    return corr_matrix
+    try:
+        missing_indicators = df.isna().astype(float)
+        corr_matrix = missing_indicators.corr()
+        corr_matrix = corr_matrix.loc[df.columns, df.columns]
+        return corr_matrix
+    except:
+        warnings.warn("Cannot compute missing correlations: invalid input")
+        return pd.DataFrame()
