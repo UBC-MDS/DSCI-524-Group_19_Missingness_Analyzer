@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy.stats import chi2_contingency
 
-def missing_how_type_(df, alpha=0.05):
+def missing_how_type(df, alpha=0.05):
     """
     This function will analyze and print out a report of missing values and the type of missingness in the dataset.
 

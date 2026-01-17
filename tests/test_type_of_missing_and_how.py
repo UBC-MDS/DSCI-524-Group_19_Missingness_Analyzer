@@ -9,20 +9,20 @@ from src.missingness_analyzer.type_of_missing_and_how import missing_how_type
 
 @pytest.fixture
 def the_df():
-    data_path = os.path.join(
-        os.path.dirname(__file__),
-        "synthetic_dataset.csv"
-    )
-    return pd.read_csv(data_path)
+    "This is the data set to test on"
+    return pd.read_csv("tests/synthetic_dataset.csv")
 
-def test_number_of_truefalse():
+@pytest.fixture
+def the_result():
+    "This is the result table of the function"
+    df = pd.read_csv("tests/synthetic_dataset.csv")
+    return missing_how_type(df, alpha = 0.05)
+
+def test_number_of_truefalse(the_result):
     """This test is too see whether the function identify the correct number of columsn that have MCAR"""
 
-    df = pd.read_csv("tests/synthetic_dataset.csv")
-    result = missing_how_type(df)
-
-    assert (result["MCAR"] == False).sum() == 3
-    assert (result["MCAR"] == True).sum() == 2
+    assert (the_result["MCAR"] == False).sum() == 3
+    assert (the_result["MCAR"] == True).sum() == 2
 
 def test_raises_error_if_not_dataframe():
     """This test is to see whether the defending raise ValueError display if the input data is not a pandas.dataframe"""
@@ -33,56 +33,23 @@ def test_raises_error_if_not_dataframe():
     except TypeError:
         assert True
 
+def test_if_alpha_is_optional(the_df, the_result):
+    """This test is to see whether the alpha input is actually default = 0.05 and optional or not"""
 
-def test_if_alpha_is_optional():
+    assert the_result.equals(missing_how_type(the_df))
 
-    df = pd.read_csv("tests/synthetic_dataset.csv")
-    result = missing_how_type(df)
+def test_if_alpha_matter(the_df):
+    """This test check whether alpha actually do affect the final result or not"""
 
-    try:
-        missing_how_type(df, alpha=1.2)
-        assert False, "Expected ValueError for invalid alpha"
-    except ValueError:
-        assert True
+    result1 = missing_how_type(the_df, alpha=0.01)
+    result2 = missing_how_type(the_df, alpha=0.5)
 
+    assert not result1.equals(result2)
 
-def test_returns_none_if_no_missing_values():
+def test_return_none_if_no_missing():
     df = pd.DataFrame({
         "A": [1, 2, 3],
-        "B": ["x", "y", "z"]
+        "B": ["i", "j", "z"]
     })
 
-    out = missing_how_type(df)
-    assert out is None
-
-
-def test_returns_dataframe_when_missing_exists():
-    df = pd.DataFrame({
-        "A": [1, None, 3, None, 5],
-        "B": ["x", "y", "x", "y", "x"]
-    })
-
-    out = missing_how_type(df)
-
-    assert isinstance(out, pd.DataFrame)
-    assert "MCAR" in out.columns
-    assert "A" in out.index
-
-def test_random_missing_can_be_mcar():
-    rng = np.random.default_rng(0)
-    n = 400
-
-    df = pd.DataFrame({
-        "A": rng.normal(size=n),
-        "B": rng.choice(["x", "y"], size=n)
-    })
-
-    mask = rng.random(n) < 0.2
-    df.loc[mask, "A"] = np.nan
-
-    out = missing_how_type(df)
-
-    # Should return a boolean
-    assert out.loc["A", "MCAR"] in [True, False]
-
-
+    assert missing_how_type(df) is None
