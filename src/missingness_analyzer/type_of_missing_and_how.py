@@ -4,17 +4,30 @@ from scipy.stats import chi2_contingency
 
 def missing_how_type_(df, alpha=0.05):
     """
-    Print out a report that contain the number of missing data in the data set, and also identify and print out the type of missigness.
-    There are 3 types of missingness: Missing completely at random (MCAR), 
-    Missing at random (MAR), Missing Not at random (MNAR)
+    This function will analyze and print out a report of missing values and the type of missingness in the dataset.
+
+    There are three types of missing data:
+    - MCAR: Missing completely at random, which can be tested using the chi-squared function from the SciPy package. 
+    The chi-squared function helps test the independence of the columns in the dataset to determine whether 
+    the missingness is completely independent of each other
+    - MAR: Missing at random. If the missingness is not MCAR, it may be MAR; 
+    however, further domain knowledge is required to make this determination.
+    - MNAR: Missing not at random. Domain expertise is required to determine whether this type of missingness is present.
 
     Parameters
     ----------
-    df(pd.DataFrames) : A pandas dataframe to analyze missingness.
+    df: pandas.DataFrames
+        A pandas dataframe to analyze missingness.
+
+    alpha: float, default=0.05
+        The significant level to test the p.value that result from the chi-squared test
 
     Returns
     -------
-    A data frame that show boolean value of which columns are MCAR or MAR and MNAR
+    pandas.DataFrame
+        The table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR.
+        If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR.
+
 
     """
     if not isinstance(df, pd.DataFrame):
