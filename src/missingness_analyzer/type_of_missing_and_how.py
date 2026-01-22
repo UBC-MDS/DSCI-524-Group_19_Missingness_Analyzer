@@ -28,8 +28,23 @@ def missing_how_type(df, alpha=0.05):
         The table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR.
         If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR.
 
+    Examples
+    --------
+    >>> df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
+    >>> missing_how_type(df, alpha=0.05)
+    This data frame have 2 missing values, below is the number of missing values for each column:
+    age             1
+    income          1
+    dtype: int64
+
+    Columns with True value is Missing Completely at Random (MCAR)
+    Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)
+    Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation
+
+    pd.DataFrame # a pandas dataframe that show whether each column have MCAR or not
 
     """
+    
     if not isinstance(df, pd.DataFrame):
         raise TypeError("Your df is not a pandas DataFrame.")
     
