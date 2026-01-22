@@ -1,0 +1,11 @@
+# Function reference {.doc .doc-index}
+
+## Missingness Analyzer
+
+This package analyzes a given dataframe for the amount and type of missingness. It has logic to suggest an imputation method specific to the type of mmissingness found in the input dataframe, and has another function to display the correlation matrix of the columns with missing data.
+
+| | |
+| --- | --- |
+| [missing_correlation_matrix.missing_correlation_matrix](missing_correlation_matrix.missing_correlation_matrix.qmd#missingness_analyzer.missing_correlation_matrix.missing_correlation_matrix) | Calculate correlations between variables' missingness patterns. |
+| [suggest_imputation.suggest_imputation](suggest_imputation.suggest_imputation.qmd#missingness_analyzer.suggest_imputation.suggest_imputation) | Suggest a single imputation strategy for handling missing data in a DataFrame. |
+| [type_of_missing_and_how.missing_how_type](type_of_missing_and_how.missing_how_type.qmd#missingness_analyzer.type_of_missing_and_how.missing_how_type) | This function will analyze and print out a report of missing values and the type of missingness in the dataset. |

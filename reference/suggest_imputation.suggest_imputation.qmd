@@ -1,0 +1,33 @@
+# suggest_imputation.suggest_imputation { #missingness_analyzer.suggest_imputation.suggest_imputation }
+
+```python
+suggest_imputation.suggest_imputation(df, missingness_type=None)
+```
+
+Suggest a single imputation strategy for handling missing data in a DataFrame.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type         | Description                                                                                                                                                                                                                                                                                                                                      | Default    |
+|--------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| df     | pd.DataFrame | The input DataFrame containing missing values to analyze. missingness_type : str, optional (default=None) The type of missingness mechanism present in the data. Valid values: - 'MCAR': Missing Completely At Random - 'MAR': Missing At Random   - 'MAR': Missing Not At Random If None, recommendation is based only on data characteristics. | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                   |
+|--------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|        | dict   | A dictionary containing the imputation recommendation with the following keys: - 'method' (str): Recommended imputation method (e.g., 'SimpleImputer',  'KNNImputer', 'IterativeImputer (MICE)', 'interpolation', or 'none') - 'reasoning' (list of str): Explanation of factors that influenced the  recommendation - 'warnings' (list of str): Important caveats or concerns about the data |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
+>>> result = suggest_imputation(df, missingness_type='MAR')
+>>> print(result['method'])
+'KNNImputer (k=5)'
+```
+
+## Notes {.doc-section .doc-section-notes}
+
+- For empty DataFrames or invalid inputs, returns method='none' or method='error'
+- High missingness (>30%) may result in warnings about reliability

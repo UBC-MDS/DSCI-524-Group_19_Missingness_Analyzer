@@ -38,9 +38,9 @@ keywords = []
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/ilyamusabirov/524-testdemo"
-"Source Code" = "https://github.com/ilyamusabirov/524-testdemo"
-"Bug Tracker" = "https://github.com/ilyamusabirov/524-testdemo/issues"
+Homepage = "https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer"
+"Source Code" = "https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/tree/main/src/missingness_analyzer"
+"Bug Tracker" = "https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/tree/main/src/missingness_analyzer/issues"
 Documentation = "https://github.com/ilyamusabirov/524-testdemo/blob/main/README.md"
 Download = "https://pypi.org/project/vancouver_survival/#files"
 
@@ -86,7 +86,7 @@ only-packages = true
 # This tells Hatch to build the package from the src/ directory.
 # Read more about src layouts here: https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html
 [tool.hatch.build.targets.wheel]
-packages = ["src/vancouver_survival"]
+packages = ["src/missingness_analyzer"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
