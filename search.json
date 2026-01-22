@@ -105,6 +105,41 @@
     "text": "If you have any questions, feel free to reach out to open an issue for assistance.\nThank you for helping make MissingnessAnalyzer great!"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Canada, Vancouver\nCreation of a data-science related package for DSCI 524 (Collaborative Software Development); a course in the Master of Data Science program at the University of British Columbia. 2025-2026.\n\n\nRocco Lee, Nguyen Nguyen, Shuhang Li\n\n\n\nMissing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in ceertain contexts.\n\n\n\n\ntype_of_missing_and_how\n\nThis function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)\nUnit tests written for this function are:\n\nthe_df()\nthe_result()\ntest_number_of_truefalse()\ntest_raises_error_if_not_dataframe()\ntest_if_alpha_is_optional(the_df, the_result)\ntest_if_alpha_matter(the_df)\ntest_return_none_if_no_missing()\n\n\nsuggest_imputation\n\nThis function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.\nUnit tests written for this function are:\n\ntest_missingness_amount()\ntest_no_missing()\ntest_duplicate_col_names()\ntest_whole_column_missing()\n\n\nmissing_correlation_matrix\n\nThis function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness\nUnit tests written for this function are:\n\ntest_missing_corr_returns_dataframe()\ntest_missing_corr_labels_match_input()\ntest_missing_corr_diagonal()\n\n\n\n\n\n\nBelow is a summary of existing packages related to our topic:\nscikit-na (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.\nmdatagen (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.\nOther Existing Packages (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold."
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Rocco Lee, Nguyen Nguyen, Shuhang Li"
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in ceertain contexts."
+  },
+  {
+    "objectID": "index.html#list-of-functions",
+    "href": "index.html#list-of-functions",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "type_of_missing_and_how\n\nThis function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)\nUnit tests written for this function are:\n\nthe_df()\nthe_result()\ntest_number_of_truefalse()\ntest_raises_error_if_not_dataframe()\ntest_if_alpha_is_optional(the_df, the_result)\ntest_if_alpha_matter(the_df)\ntest_return_none_if_no_missing()\n\n\nsuggest_imputation\n\nThis function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.\nUnit tests written for this function are:\n\ntest_missingness_amount()\ntest_no_missing()\ntest_duplicate_col_names()\ntest_whole_column_missing()\n\n\nmissing_correlation_matrix\n\nThis function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness\nUnit tests written for this function are:\n\ntest_missing_corr_returns_dataframe()\ntest_missing_corr_labels_match_input()\ntest_missing_corr_diagonal()"
+  },
+  {
+    "objectID": "index.html#python-ecosystem",
+    "href": "index.html#python-ecosystem",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Below is a summary of existing packages related to our topic:\nscikit-na (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.\nmdatagen (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.\nOther Existing Packages (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold."
+  },
+  {
     "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
     "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
     "title": "missing_correlation_matrix.missing_correlation_matrix",
