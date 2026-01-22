@@ -6,6 +6,8 @@ website:
   title: "Missingness Analyzer"
   navbar:
     left:
+      - text: "Home"
+        href: index.qmd
       - text: "Reference"
         href: reference/index.qmd
 
