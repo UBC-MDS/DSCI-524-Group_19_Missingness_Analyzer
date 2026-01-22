@@ -144,14 +144,35 @@
     "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
     "title": "missing_correlation_matrix.missing_correlation_matrix",
     "section": "",
-    "text": "missing_correlation_matrix.missing_correlation_matrix\nmissing_correlation_matrix.missing_correlation_matrix(df)\nCalculate correlations between variables’ missingness patterns.\nFor each column in df, this function constructs a binary indicator (1 = value is missing, 0 = value is observed) and computes the pairwise correlation matrix of these indicators. High positive correlations flag variables that tend to be missing at the same time, which can reveal shared data-collection issues or common missingness mechanisms.\nParameters df : pd.DataFrame A pandas DataFrame for which the pairwise correlations of missing values across columns should be computed.\nReturns pd.DataFrame A square DataFrame whose rows and columns correspond to the original variables, and whose entries give the correlation between their missingness indicators."
+    "text": "missing_correlation_matrix.missing_correlation_matrix(df)\nCalculate correlations between variables’ missingness patterns.\nFor each column in df, this function constructs a binary indicator (1 = value is missing, 0 = value is observed) and computes the pairwise correlation matrix of these indicators. High positive correlations flag variables that tend to be missing at the same time, which can reveal shared data-collection issues or common missingness mechanisms.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nA pandas DataFrame for which the pairwise correlations of missing values across columns should be computed.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA square DataFrame whose rows and columns correspond to the original variables, and whose entries give the correlation between their missingness indicators.\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = suggest_imputation(df, missingness_type='MAR')\n            age         income\nage     1.0     -0.5\nincome      -0.5    1.0"
+  },
+  {
+    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#parameters",
+    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#parameters",
+    "title": "missing_correlation_matrix.missing_correlation_matrix",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nA pandas DataFrame for which the pairwise correlations of missing values across columns should be computed.\nrequired"
+  },
+  {
+    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#returns",
+    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#returns",
+    "title": "missing_correlation_matrix.missing_correlation_matrix",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA square DataFrame whose rows and columns correspond to the original variables, and whose entries give the correlation between their missingness indicators."
+  },
+  {
+    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#examples",
+    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#examples",
+    "title": "missing_correlation_matrix.missing_correlation_matrix",
+    "section": "",
+    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = suggest_imputation(df, missingness_type='MAR')\n            age         income\nage     1.0     -0.5\nincome      -0.5    1.0"
   },
   {
     "objectID": "reference/type_of_missing_and_how.missing_how_type.html",
     "href": "reference/type_of_missing_and_how.missing_how_type.html",
     "title": "type_of_missing_and_how.missing_how_type",
     "section": "",
-    "text": "type_of_missing_and_how.missing_how_type(df, alpha=0.05)\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset.\nThere are three types of missing data: - MCAR: Missing completely at random, which can be tested using the chi-squared function from the SciPy package. The chi-squared function helps test the independence of the columns in the dataset to determine whether the missingness is completely independent of each other - MAR: Missing at random. If the missingness is not MCAR, it may be MAR; however, further domain knowledge is required to make this determination. - MNAR: Missing not at random. Domain expertise is required to determine whether this type of missingness is present.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\n\nA pandas dataframe to analyze missingness.\nrequired\n\n\nalpha\n\nThe significant level to test the p.value that result from the chi-squared test\n0.05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR."
+    "text": "type_of_missing_and_how.missing_how_type(df, alpha=0.05)\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset.\nThere are three types of missing data: - MCAR: Missing completely at random, which can be tested using the chi-squared function from the SciPy package. The chi-squared function helps test the independence of the columns in the dataset to determine whether the missingness is completely independent of each other - MAR: Missing at random. If the missingness is not MCAR, it may be MAR; however, further domain knowledge is required to make this determination. - MNAR: Missing not at random. Domain expertise is required to determine whether this type of missingness is present.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\n\nA pandas dataframe to analyze missingness.\nrequired\n\n\nalpha\n\nThe significant level to test the p.value that result from the chi-squared test\n0.05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR.\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; missing_how_type(df, alpha=0.05)\nThis data frame have 2 missing values, below is the number of missing values for each column:\nage        1\nincome     1\ndtype: int64\nColumns with True value is Missing Completely at Random (MCAR) Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR) Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation\n    MCAR\ntarget\nage True income True"
   },
   {
     "objectID": "reference/type_of_missing_and_how.missing_how_type.html#parameters",
@@ -166,5 +187,12 @@
     "title": "type_of_missing_and_how.missing_how_type",
     "section": "",
     "text": "Name\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR."
+  },
+  {
+    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#examples",
+    "href": "reference/type_of_missing_and_how.missing_how_type.html#examples",
+    "title": "type_of_missing_and_how.missing_how_type",
+    "section": "",
+    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; missing_how_type(df, alpha=0.05)\nThis data frame have 2 missing values, below is the number of missing values for each column:\nage        1\nincome     1\ndtype: int64\nColumns with True value is Missing Completely at Random (MCAR) Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR) Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation\n    MCAR\ntarget\nage True income True"
   }
 ]
