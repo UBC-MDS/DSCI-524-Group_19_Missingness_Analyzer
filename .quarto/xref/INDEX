@@ -1,0 +1,20 @@
+{
+  "CODE_OF_CONDUCT.md": {
+    "CODE_OF_CONDUCT.html": "91ae86ce"
+  },
+  "CONTRIBUTING.md": {
+    "CONTRIBUTING.html": "3e3b89e6"
+  },
+  "reference/index.qmd": {
+    "index.html": "586ed264"
+  },
+  "reference/missing_correlation_matrix.missing_correlation_matrix.qmd": {
+    "missing_correlation_matrix.missing_correlation_matrix.html": "935e083a"
+  },
+  "reference/suggest_imputation.suggest_imputation.qmd": {
+    "suggest_imputation.suggest_imputation.html": "72188d0c"
+  },
+  "reference/type_of_missing_and_how.missing_how_type.qmd": {
+    "type_of_missing_and_how.missing_how_type.html": "ad5806e7"
+  }
+}
