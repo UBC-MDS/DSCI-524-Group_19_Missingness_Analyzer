@@ -10,15 +10,18 @@ def missing_correlation_matrix(df):
     which can reveal shared data-collection issues or common missingness mechanisms.
 
     Parameters
+    ----------
     df : pd.DataFrame
         A pandas DataFrame for which the pairwise correlations of missing
         values across columns should be computed.
 
     Returns
+    -------
     pd.DataFrame
         A square DataFrame whose rows and columns correspond to the original
         variables, and whose entries give the correlation between their
-        missingness indicators.
+        missingness indicators.    
+
     """
     try:
         missing_indicators = df.isna().astype(float)
