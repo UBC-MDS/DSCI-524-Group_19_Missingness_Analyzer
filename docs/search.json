@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "reference/type_of_missing_and_how.missing_how_type.html",
+    "href": "reference/type_of_missing_and_how.missing_how_type.html",
+    "title": "type_of_missing_and_how.missing_how_type",
+    "section": "",
+    "text": "type_of_missing_and_how.missing_how_type(df, alpha=0.05)\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset.\nThere are three types of missing data: - MCAR: Missing completely at random, which can be tested using the chi-squared function from the SciPy package. The chi-squared function helps test the independence of the columns in the dataset to determine whether the missingness is completely independent of each other - MAR: Missing at random. If the missingness is not MCAR, it may be MAR; however, further domain knowledge is required to make this determination. - MNAR: Missing not at random. Domain expertise is required to determine whether this type of missingness is present.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\n\nA pandas dataframe to analyze missingness.\nrequired\n\n\nalpha\n\nThe significant level to test the p.value that result from the chi-squared test\n0.05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR."
+  },
+  {
+    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#parameters",
+    "href": "reference/type_of_missing_and_how.missing_how_type.html#parameters",
+    "title": "type_of_missing_and_how.missing_how_type",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\n\nA pandas dataframe to analyze missingness.\nrequired\n\n\nalpha\n\nThe significant level to test the p.value that result from the chi-squared test\n0.05"
+  },
+  {
+    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#returns",
+    "href": "reference/type_of_missing_and_how.missing_how_type.html#returns",
+    "title": "type_of_missing_and_how.missing_how_type",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR."
+  },
+  {
+    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
+    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
+    "title": "missing_correlation_matrix.missing_correlation_matrix",
+    "section": "",
+    "text": "missing_correlation_matrix.missing_correlation_matrix\nmissing_correlation_matrix.missing_correlation_matrix(df)\nCalculate correlations between variables’ missingness patterns.\nFor each column in df, this function constructs a binary indicator (1 = value is missing, 0 = value is observed) and computes the pairwise correlation matrix of these indicators. High positive correlations flag variables that tend to be missing at the same time, which can reveal shared data-collection issues or common missingness mechanisms.\nParameters df : pd.DataFrame A pandas DataFrame for which the pairwise correlations of missing values across columns should be computed.\nReturns pd.DataFrame A square DataFrame whose rows and columns correspond to the original variables, and whose entries give the correlation between their missingness indicators."
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing to MissingnessAnalyzer",
+    "section": "",
+    "text": "Thank you for your interest in contributing to MissingnessAnalyzer! We appreciate your help in making this project better.\n\n\nThere are many ways to contribute, including:\n\nReporting bugs or issues\nSuggesting new features or improvements\nSubmitting code via pull requests\nImproving documentation\nHelping with testing and reviewing\n\n\n\n\n\nFork the repository and clone it locally.\nCreate a new branch for your feature or bug fix.\nFollow the coding style and guidelines (see below).\nWrite tests for new code or features.\nRun existing tests to ensure nothing breaks.\nSubmit a pull request with a clear description of your changes.\n\n\n\n\n\nFollow existing code style and formatting.\nWrite clear, concise commit messages.\nDocument new functions and modules.\n\n\n\n\nIf you encounter bugs or want to request features, please open an issue on GitHub with detailed information.\n\n\n\nBy contributing, you agree to abide by our Code of Conduct, which outlines expected behavior within this community.\n\n\n\nIf you have any questions, feel free to reach out to open an issue for assistance.\nThank you for helping make MissingnessAnalyzer great!"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#how-can-i-contribute",
+    "href": "CONTRIBUTING.html#how-can-i-contribute",
+    "title": "Contributing to MissingnessAnalyzer",
+    "section": "",
+    "text": "There are many ways to contribute, including:\n\nReporting bugs or issues\nSuggesting new features or improvements\nSubmitting code via pull requests\nImproving documentation\nHelping with testing and reviewing"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#getting-started",
+    "href": "CONTRIBUTING.html#getting-started",
+    "title": "Contributing to MissingnessAnalyzer",
+    "section": "",
+    "text": "Fork the repository and clone it locally.\nCreate a new branch for your feature or bug fix.\nFollow the coding style and guidelines (see below).\nWrite tests for new code or features.\nRun existing tests to ensure nothing breaks.\nSubmit a pull request with a clear description of your changes."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#code-style-and-guidelines",
+    "href": "CONTRIBUTING.html#code-style-and-guidelines",
+    "title": "Contributing to MissingnessAnalyzer",
+    "section": "",
+    "text": "Follow existing code style and formatting.\nWrite clear, concise commit messages.\nDocument new functions and modules."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#reporting-issues",
+    "href": "CONTRIBUTING.html#reporting-issues",
+    "title": "Contributing to MissingnessAnalyzer",
+    "section": "",
+    "text": "If you encounter bugs or want to request features, please open an issue on GitHub with detailed information."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#code-of-conduct",
+    "href": "CONTRIBUTING.html#code-of-conduct",
+    "title": "Contributing to MissingnessAnalyzer",
+    "section": "",
+    "text": "By contributing, you agree to abide by our Code of Conduct, which outlines expected behavior within this community."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#need-help",
+    "href": "CONTRIBUTING.html#need-help",
+    "title": "Contributing to MissingnessAnalyzer",
+    "section": "",
+    "text": "If you have any questions, feel free to reach out to open an issue for assistance.\nThank you for helping make MissingnessAnalyzer great!"
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html",
+    "href": "CODE_OF_CONDUCT.html",
+    "title": "Group 19 Code of Conduct",
+    "section": "",
+    "text": "Group 19 Code of Conduct\nThis Code of Conduct outlines our commitment to fostering a positive, inclusive, and respectful environment for all members of Group 19. It includes:\n\nDiversity and Inclusivity Statement\nThis group is committed to creating a respectful and welcoming environment for everyone. Diversity of background, identity, and thought is valued and celebrated. All individuals, regardless of race, gender, age, disability, sexual orientation, religion, or any other characteristic, are treated with dignity and respect at all times\n\n\nExpected and Unacceptable Behaviour\n\nTreat all members with courtesy, respect, and fairness.\nUse inclusive and respectful language.\nValue and include diverse perspectives in all activities.\nAvoid discrimination, harassment, bullying, violence, threats, and offensive jokes or language.\nUnacceptable behaviours include, but are not limited to: harassment, discrimination, physical or verbal abuse, intimidation, exclusion, and retaliation against those who report concerns\n\n\n\nConsequences for Unacceptable Behaviour\n\nRemedial actions such as counselling, warnings, or mediation for minor or unintentional breaches.\nFormal disciplinary actions for serious or repeated breaches, which may include suspension or removal from the organization\n\n\n\nReporting and Response Procedure\n\nReport unacceptable behaviour to any designated leader or through an established reporting channel.\nAll reports are taken seriously, investigated promptly, and handled confidentially where possible.\nThose found in breach of the code may be subject to the outlined consequences.\nRetaliation against anyone reporting in good faith is itself a violation and will be addressed accordingly\n\nSigned: Group 19 Members"
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "This package analyzes a given dataframe for the amount and type of missingness. It has logic to suggest an imputation method specific to the type of mmissingness found in the input dataframe, and has another function to display the correlation matrix of the columns with missing data.\n\n\n\nmissing_correlation_matrix.missing_correlation_matrix\nCalculate correlations between variables’ missingness patterns.\n\n\nsuggest_imputation.suggest_imputation\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\ntype_of_missing_and_how.missing_how_type\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset."
+  },
+  {
+    "objectID": "reference/index.html#missingness-analyzer",
+    "href": "reference/index.html#missingness-analyzer",
+    "title": "Function reference",
+    "section": "",
+    "text": "This package analyzes a given dataframe for the amount and type of missingness. It has logic to suggest an imputation method specific to the type of mmissingness found in the input dataframe, and has another function to display the correlation matrix of the columns with missing data.\n\n\n\nmissing_correlation_matrix.missing_correlation_matrix\nCalculate correlations between variables’ missingness patterns.\n\n\nsuggest_imputation.suggest_imputation\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\ntype_of_missing_and_how.missing_how_type\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset."
+  },
+  {
+    "objectID": "reference/suggest_imputation.suggest_imputation.html",
+    "href": "reference/suggest_imputation.suggest_imputation.html",
+    "title": "suggest_imputation.suggest_imputation",
+    "section": "",
+    "text": "suggest_imputation.suggest_imputation(df, missingness_type=None)\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nThe input DataFrame containing missing values to analyze. missingness_type : str, optional (default=None) The type of missingness mechanism present in the data. Valid values: - ‘MCAR’: Missing Completely At Random - ‘MAR’: Missing At Random - ‘MAR’: Missing Not At Random If None, recommendation is based only on data characteristics.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ndict\nA dictionary containing the imputation recommendation with the following keys: - ‘method’ (str): Recommended imputation method (e.g., ‘SimpleImputer’, ‘KNNImputer’, ‘IterativeImputer (MICE)’, ‘interpolation’, or ‘none’) - ‘reasoning’ (list of str): Explanation of factors that influenced the recommendation - ‘warnings’ (list of str): Important caveats or concerns about the data\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = suggest_imputation(df, missingness_type='MAR')\n&gt;&gt;&gt; print(result['method'])\n'KNNImputer (k=5)'\n\n\n\n\nFor empty DataFrames or invalid inputs, returns method=‘none’ or method=‘error’\nHigh missingness (&gt;30%) may result in warnings about reliability"
+  },
+  {
+    "objectID": "reference/suggest_imputation.suggest_imputation.html#parameters",
+    "href": "reference/suggest_imputation.suggest_imputation.html#parameters",
+    "title": "suggest_imputation.suggest_imputation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nThe input DataFrame containing missing values to analyze. missingness_type : str, optional (default=None) The type of missingness mechanism present in the data. Valid values: - ‘MCAR’: Missing Completely At Random - ‘MAR’: Missing At Random - ‘MAR’: Missing Not At Random If None, recommendation is based only on data characteristics.\nrequired"
+  },
+  {
+    "objectID": "reference/suggest_imputation.suggest_imputation.html#returns",
+    "href": "reference/suggest_imputation.suggest_imputation.html#returns",
+    "title": "suggest_imputation.suggest_imputation",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\ndict\nA dictionary containing the imputation recommendation with the following keys: - ‘method’ (str): Recommended imputation method (e.g., ‘SimpleImputer’, ‘KNNImputer’, ‘IterativeImputer (MICE)’, ‘interpolation’, or ‘none’) - ‘reasoning’ (list of str): Explanation of factors that influenced the recommendation - ‘warnings’ (list of str): Important caveats or concerns about the data"
+  },
+  {
+    "objectID": "reference/suggest_imputation.suggest_imputation.html#examples",
+    "href": "reference/suggest_imputation.suggest_imputation.html#examples",
+    "title": "suggest_imputation.suggest_imputation",
+    "section": "",
+    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = suggest_imputation(df, missingness_type='MAR')\n&gt;&gt;&gt; print(result['method'])\n'KNNImputer (k=5)'"
+  },
+  {
+    "objectID": "reference/suggest_imputation.suggest_imputation.html#notes",
+    "href": "reference/suggest_imputation.suggest_imputation.html#notes",
+    "title": "suggest_imputation.suggest_imputation",
+    "section": "",
+    "text": "For empty DataFrames or invalid inputs, returns method=‘none’ or method=‘error’\nHigh missingness (&gt;30%) may result in warnings about reliability"
+  }
+]

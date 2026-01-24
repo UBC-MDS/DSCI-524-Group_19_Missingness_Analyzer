@@ -24,3 +24,4 @@ dependencies:
       - deepchecks==0.19.1
       - pytest==7.4.4
       - Pillow==10.4.0
+      - quartodoc

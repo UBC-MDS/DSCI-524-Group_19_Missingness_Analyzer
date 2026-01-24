@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Missingness Analyzer"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Reference"
+        href: reference/index.qmd
+
+format:
+  html:
+    theme: solar
+    toc: true
+
+quartodoc:
+  package: missingness_analyzer
+  dir: reference
+  sections:
+    - title: Missingness Analyzer
+      desc: This package analyzes a given dataframe for the amount and type of missingness. It has logic to suggest an imputation method specific to the type of mmissingness found in the input dataframe, and has another function to display the correlation matrix of the columns with missing data.
+      contents:
+        - missing_correlation_matrix.missing_correlation_matrix
+        - suggest_imputation.suggest_imputation
+        - type_of_missing_and_how.missing_how_type
