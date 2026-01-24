@@ -25,7 +25,7 @@ def missing_correlation_matrix(df):
     Examples
     --------
     >>> df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
-    >>> result = suggest_imputation(df, missingness_type='MAR')
+    >>> result = missing_correlation_matrix(df)
 	        age	    income
     age	    1.0	    -0.5
     income	-0.5	1.0
