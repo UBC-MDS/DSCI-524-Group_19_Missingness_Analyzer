@@ -68,7 +68,9 @@ tests = [
     "pytest-raises",
     "pytest-randomly",
     "pytest-xdist",
-    "pandas"
+    "pandas",
+    "scipy",
+    "numpy"
 ]
 
 
