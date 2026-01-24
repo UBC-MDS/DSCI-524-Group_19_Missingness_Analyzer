@@ -12,6 +12,51 @@ Rocco Lee, Nguyen Nguyen, Shuhang Li
 
 Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in ceertain contexts.
 
+## Setting Up 
+
+Here's how to setup missingness_analyzer for local development:
+
+1. Fork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer
+
+2. Clone the fork locally using:
+
+```bash 
+git clone git@github.com:your_name_here/missingness_analyzer.git
+```
+
+3. Create the virtual environment with:
+```bash 
+conda env create -f environment.yml
+```
+
+4. Once the environment is created, activiate it with:
+```bash
+conda activate 524-Group-19
+```
+
+5. Install the package with:
+```bash
+pip install -e .
+```
+
+6. Develop Away!
+  * Make sure to document your changes with comments
+  * If you are adding new functions in new python files, ensure that the docstring for those functions are written with Numpy formatting.
+
+## Publishing Your Code
+
+After fixing bugs or developing new features, here's how you can deploy your changes
+
+1. Verify that all tests still pass with (run in terminal):
+```bash
+pytest
+```
+
+2. Once you have verified that all tests pass, commit and push your changes to the remote repository and create a pull request
+
+3. This should automatically trigger a Github Workflow which automatically updates the HTML site containing documentation for this package, builds an artifact and deploys the changes to PyPI
+  * The updated documentation can be found [here] (https://ubc-mds.github.io/DSCI-524-Group_19_Missingness_Analyzer/CONTRIBUTING.html)
+
 ## **List of Functions**
 
 * type\_of\_missing\_and\_how
