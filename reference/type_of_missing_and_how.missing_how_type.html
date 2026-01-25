@@ -229,14 +229,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> df <span class="op">=</span> pd.DataFrame({<span class="st">'age'</span>: [<span class="dv">25</span>, np.nan, <span class="dv">35</span>], <span class="st">'income'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, np.nan]})</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> missing_how_type(df, alpha<span class="op">=</span><span class="fl">0.05</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>This data frame have <span class="dv">2</span> missing values, below <span class="kw">is</span> the number of missing values <span class="cf">for</span> each column:</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>age        <span class="dv">1</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>income     <span class="dv">1</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Columns with True value is Missing Completely at Random (MCAR) Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR) Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation</p>
-<pre><code>    MCAR</code></pre>
-<p>target<br>
-age True income True</p>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    This data frame have <span class="dv">2</span> missing values, below <span class="kw">is</span> the number of missing values <span class="cf">for</span> each column:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    age        <span class="dv">1</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    income     <span class="dv">1</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    dtype: int64</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>Columns with True value is Missing Completely at Random (MCAR)
+Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)
+Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation
+
+            MCAR
+target  
+age             True
+income      True</code></pre>
 
 
 </section>
