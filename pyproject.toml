@@ -13,7 +13,7 @@ requires = ["hatchling"]
 [project]
 name = "missingness_analyzer"
 # You can chose to use dynamic versioning with hatch or static where you add it manually.
-version = "0.2.0"
+version = "0.1.0"
 
 description = "A package to identifying the type of missigness in a dataframe and suggest imputation strategies"
 authors = [
