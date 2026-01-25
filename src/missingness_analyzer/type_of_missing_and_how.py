@@ -32,19 +32,19 @@ def missing_how_type(df, alpha=0.05):
     --------
     >>> df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
     >>> missing_how_type(df, alpha=0.05)
-    This data frame have 2 missing values, below is the number of missing values for each column:
-    age        1
-    income     1
-    dtype: int64
+        This data frame have 2 missing values, below is the number of missing values for each column:
+        age        1
+        income     1
+        dtype: int64
 
-    Columns with True value is Missing Completely at Random (MCAR)
-    Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)
-    Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation
+        - Columns with True value is Missing Completely at Random (MCAR)
+        - Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)
+        - Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation
 
-    	    MCAR
-    target	
-    age	    True
-    income	True
+                MCAR
+        target	
+        age	    True
+        income	True
 
     """
     
