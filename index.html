@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Below is a summary of existing packages related to our topic:</p>
 <p><strong>scikit-na</strong> (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.</p>
 <p><strong>mdatagen</strong> (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.</p>
-<p><strong>Other Existing Packages</strong> (e.g.&nbsp;deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold.</p>
+<p><strong>Other Existing Packages</strong> (e.g.&nbsp;deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on notonly the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data.</p>
 
 
 </section>
