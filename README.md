@@ -117,3 +117,4 @@ This GitHub repo contains a project for artificially generating data for missing
 
 **Other Existing Packages** (e.g. deepchecks)
 Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold.
+What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on notonly the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data.
