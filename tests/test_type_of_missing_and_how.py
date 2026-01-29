@@ -5,10 +5,10 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-#sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.append(str(ROOT / "src"))
-from missingness_analyzer.type_of_missing_and_how import missing_how_type
+# #sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+# ROOT = Path(__file__).resolve().parents[1]
+# sys.path.append(str(ROOT / "src"))
+from missingness_analyzer import missing_how_type
 
 @pytest.fixture
 def the_df():

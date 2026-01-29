@@ -5,9 +5,9 @@ import numpy as np
 import pytest
 
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.append(str(ROOT / "src"))
-from missingness_analyzer.missing_correlation_matrix import (missing_correlation_matrix,)
+# ROOT = Path(__file__).resolve().parents[1]
+# sys.path.append(str(ROOT / "src"))
+from missingness_analyzer import missing_correlation_matrix
 
 @pytest.fixture
 def the_df():

@@ -6,9 +6,9 @@ import numpy as np
 from pathlib import Path
 
 #sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.append(str(ROOT / "src"))
-from missingness_analyzer.suggest_imputation import (suggest_imputation,)
+# ROOT = Path(__file__).resolve().parents[1]
+# sys.path.append(str(ROOT / "src"))
+from missingness_analyzer import suggest_imputation
 
 def test_missingness_amount():
     """Testing to see if function accurately identifies the amount of missingness in the dataset"""
