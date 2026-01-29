@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2026-01-29T00:43:50.019Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/suggest_imputation.suggest_imputation.html</loc>
-    <lastmod>2026-01-29T00:43:50.026Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/index.html</loc>
-    <lastmod>2026-01-29T00:44:06.594Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/CONTRIBUTING.html</loc>
-    <lastmod>2026-01-29T00:43:50.019Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/index.html</loc>
-    <lastmod>2026-01-29T00:43:50.025Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/missing_correlation_matrix.missing_correlation_matrix.html</loc>
-    <lastmod>2026-01-29T00:44:06.619Z</lastmod>
+    <lastmod>2026-01-29T07:21:13.378Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/type_of_missing_and_how.missing_how_type.html</loc>
-    <lastmod>2026-01-29T00:44:06.629Z</lastmod>
+    <lastmod>2026-01-29T07:21:33.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/missing_correlation_matrix.missing_correlation_matrix.html</loc>
+    <lastmod>2026-01-29T07:21:33.014Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/index.html</loc>
+    <lastmod>2026-01-29T07:21:13.385Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/CONTRIBUTING.html</loc>
+    <lastmod>2026-01-29T07:21:13.378Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/index.html</loc>
+    <lastmod>2026-01-29T07:21:32.988Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/suggest_imputation.suggest_imputation.html</loc>
+    <lastmod>2026-01-29T07:21:13.385Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/retrospective.html</loc>
+    <lastmod>2026-01-29T07:21:13.385Z</lastmod>
   </url>
 </urlset>

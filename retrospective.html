@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>type_of_missing_and_how.missing_how_type – Missingness Analyzer</title>
+<title>Project Retrospective – Missingness Analyzer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,62 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b153582a94ddcde5434ef53ba0c3cd28.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-b153582a94ddcde5434ef53ba0c3cd28.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Missingness Analyzer</span>
     </a>
   </div>
@@ -125,15 +90,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../reference/index.html"> 
+    <a class="nav-link" href="./reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../retrospective.html"> 
+    <a class="nav-link active" href="./retrospective.html" aria-current="page"> 
 <span class="menu-text">Retrospective</span></a>
   </li>  
 </ul>
@@ -152,102 +117,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#missingness_analyzer.type_of_missing_and_how.missing_how_type" id="toc-missingness_analyzer.type_of_missing_and_how.missing_how_type" class="nav-link active" data-scroll-target="#missingness_analyzer.type_of_missing_and_how.missing_how_type">type_of_missing_and_how.missing_how_type</a>
-  <ul class="collapse">
-  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
-  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
-  </ul></li>
+  <li><a href="#developing-this-package" id="toc-developing-this-package" class="nav-link active" data-scroll-target="#developing-this-package">Developing this Package</a></li>
+  <li><a href="#scaling-up" id="toc-scaling-up" class="nav-link" data-scroll-target="#scaling-up">Scaling Up</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Project Retrospective</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="missingness_analyzer.type_of_missing_and_how.missing_how_type" class="level1">
-<h1>type_of_missing_and_how.missing_how_type</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>type_of_missing_and_how.missing_how_type(df, alpha<span class="op">=</span><span class="fl">0.05</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This function will analyze and print out a report of missing values and the type of missingness in the dataset.</p>
-<p>There are three types of missing data: - MCAR: Missing completely at random, which can be tested using the chi-squared function from the SciPy package. The chi-squared function helps test the independence of the columns in the dataset to determine whether the missingness is completely independent of each other - MAR: Missing at random. If the missingness is not MCAR, it may be MAR; however, further domain knowledge is required to make this determination. - MNAR: Missing not at random. Domain expertise is required to determine whether this type of missingness is present.</p>
-<section id="parameters" class="level2 doc-section doc-section-parameters">
-<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 74%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>df</td>
-<td></td>
-<td>A pandas dataframe to analyze missingness.</td>
-<td><em>required</em></td>
-</tr>
-<tr class="even">
-<td>alpha</td>
-<td></td>
-<td>The significant level to test the p.value that result from the chi-squared test</td>
-<td><code>0.05</code></td>
-</tr>
-</tbody>
-</table>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="developing-this-package" class="level2">
+<h2 class="anchored" data-anchor-id="developing-this-package">Developing this Package</h2>
+<p>This package mainly revolved around applying best practices of the Github workflow. A clear set of rules has been laid out and followed by each member throughout the project. Those being: Issues being used as a form of communication - Letting members know when new tasks are available, tracking who’s doing what, and mapping associated issues with the pull request in which they were completed in. As the project’s main focus is on applications in Pandas dataframes, a lot of the package was written in Python. However, Quarto served as a great tool to help visually render documentation in an aesthetically pleasing way and makes it easier if we decide to make a presentation out of our markdown files in the future. Github Actions was used as a CI/CD tool to ease the chore of manually integrating and deploying changes and new functionality to the web. It gave us the option to easily validate that all of our previous unit tests still passed when new functions were written, and automated the deployment of new features to the hosting service where our package is publically accessible (Test PyPI).</p>
 </section>
-<section id="returns" class="level2 doc-section doc-section-returns">
-<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 2%">
-<col style="width: 6%">
-<col style="width: 90%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td>pandas.DataFrame</td>
-<td>The table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="examples" class="level2 doc-section doc-section-examples">
-<h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> df <span class="op">=</span> pd.DataFrame({<span class="st">'age'</span>: [<span class="dv">25</span>, np.nan, <span class="dv">35</span>], <span class="st">'income'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, np.nan]})</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> missing_how_type(df, alpha<span class="op">=</span><span class="fl">0.05</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    This data frame have <span class="dv">2</span> missing values, below <span class="kw">is</span> the number of missing values <span class="cf">for</span> each column:</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    age        <span class="dv">1</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    income     <span class="dv">1</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    dtype: int64</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>- Columns with True value is Missing Completely at Random (MCAR)
-- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)
-- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation
-
-        MCAR
-target  
-age         True
-income  True</code></pre>
+<section id="scaling-up" class="level2">
+<h2 class="anchored" data-anchor-id="scaling-up">Scaling Up</h2>
+<p>If we were given the task of scaling up this project, using the Git workflow versus the traditional Github workflow should provide a more streamlined collaboration process. Github would still be our version control system of choice, as it is what the Git workflow is based on. The main difference is that there would be a more ridgid approval process for suggesting and implementing new changes to the package. For example, a proper template would be in place to create new issues. This template would clearly outline where the suggestion/fix come from, and how implementing it would positively impact the package. Implementing this practice would also give clarity to specific components of the package that the suggestion/fix is targeted towards. For larger projects, the Kanban board would also take a more active role in agile devlopment practices. The Kanban board would not only be used to track each team member’s current workload and document past work, it would also serve as a discussion board for cross team communication and workload re-balancing should a team memeber become absent during the project. A complete Ci/CD pipeline living on Github Actions would also have to be configured for a streamlined development process. This pipeline should handle everything but development of new features, such as ensuring backward compatability, edge case handling, and automatically updating all documentation (e.g.&nbsp;README, package website, package version on hosting platform, etc.).</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
