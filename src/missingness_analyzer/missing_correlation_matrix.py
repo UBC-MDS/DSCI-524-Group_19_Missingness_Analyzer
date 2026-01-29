@@ -1,4 +1,5 @@
 import warnings
+import pandas as pd
 def missing_correlation_matrix(df):
     """
     Calculate correlations between variables' missingness patterns.
@@ -33,6 +34,9 @@ def missing_correlation_matrix(df):
     
     """
     try:
+        if not df.isnull().any().any():
+            print("No missing values detected in the dataframe.")
+            return pd.DataFrame()
         missing_indicators = df.isna().astype(float)
         corr_matrix = missing_indicators.corr()
         corr_matrix = corr_matrix.loc[df.columns, df.columns]

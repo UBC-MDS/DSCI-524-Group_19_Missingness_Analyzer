@@ -51,3 +51,11 @@ def test_whole_column_missing():
     result = suggest_imputation(df_whole_col)
 
     assert result["missingness_amount"] == 100
+
+def test_empty_dataframe():
+    """Testing if the function can handle an empty dataframe as an inut"""
+    empty = pd.DataFrame()
+
+    result = suggest_imputation(empty)
+
+    assert result["reasoning"] == ['Empty dataframe passed']
