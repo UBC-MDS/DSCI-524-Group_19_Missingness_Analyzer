@@ -16,6 +16,10 @@ name = "missingness_analyzer"
 #version = "0.5.0"
 dynamic = ["version"]
 
+[tool.hatch.version]
+source = "vcs"
+raw-options = { version_scheme = "no-guess-dev", local_scheme = "no-local-version" }
+
 description = "A package to identifying the type of missigness in a dataframe and suggest imputation strategies"
 authors = [
     { name = "Rocco Lee", email = "roccolee18@gmail.com" },
