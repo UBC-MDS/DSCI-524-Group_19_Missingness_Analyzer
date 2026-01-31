@@ -2,6 +2,7 @@
 
 ![CI](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/actions/workflows/build.yml/badge.svg)
 ![Python](https://img.shields.io/pypi/pyversions/missingness-analyzer)
+[![codecov](https://codecov.io/github/ubc-mds/dsci-524-group_19_missingness_analyzer/graph/badge.svg?token=Dg3l0WPYl9)](https://codecov.io/github/ubc-mds/dsci-524-group_19_missingness_analyzer)
 
 Canada, Vancouver
 
