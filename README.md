@@ -70,7 +70,7 @@ pytest
 
 ## **List of Functions**
 
--   `type_of_missing_and_how`
+-   `missing_how_type`
 
     -   This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR). It will return
 
@@ -124,9 +124,9 @@ income  True
 
 ## Dataset Acknowledgement
 
-This project was developed using the following dataset:\
-- Dataset name: [Retail Product Dataset with Missing Values](https://www.kaggle.com/datasets/himelsarder/retail-product-dataset-with-missing-values/data)\
-- Source: Kaggle\
+This project was developed using the following dataset:
+- Dataset name: [Retail Product Dataset with Missing Values](https://www.kaggle.com/datasets/himelsarder/retail-product-dataset-with-missing-values/data)
+- Source: Kaggle
 - License: CC0 1.0 Universal (Public Domain)
 
 ## Contributing
