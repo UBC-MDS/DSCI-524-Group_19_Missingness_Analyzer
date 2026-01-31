@@ -57,7 +57,7 @@ pytest
 2. Once you have verified that all tests pass, commit and push your changes to the remote repository and create a pull request
 
 3. This should automatically trigger a Github Workflow which automatically updates the HTML site containing documentation for this package, builds an artifact and deploys the changes to PyPI
-  * The updated documentation can be found [here] (https://ubc-mds.github.io/DSCI-524-Group_19_Missingness_Analyzer/CONTRIBUTING.html)
+  * The updated documentation can be found [here](https://ubc-mds.github.io/DSCI-524-Group_19_Missingness_Analyzer/CONTRIBUTING.html)
 
 ## **List of Functions**
 
