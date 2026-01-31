@@ -145,7 +145,7 @@ This project is licensed under the MIT License, please see [LICENSE](LICENSE) fi
 
 If you use this package, please cite as the following:
 
-Lee, R., Nguyen, N., & Li, S. (2026) *missingness-analyzer* (Version 0.5.0).\
+Lee, R., Nguyen, N., & Li, S. (2026) *missingness-analyzer* (Version 0.5.3).\
 https://test.pypi.org/project/missingness-analyzer/
 
 ## **Python Ecosystem**
