@@ -88,18 +88,35 @@ from missingness-analyzer.suggest_imputation import suggest_imputation
 
 df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
 
-# `missing_how_type`
-missing_how_type(df)
+# suggest_imputation
+results = suggest_imputation(df)
+print(result['method']) 
+>>> KNNImputer (k=5)
 
-# `missing_correlation_matrix`
+# missing_correlation_matrix
 missing_correlation_matrix(df)
+>>>
             age     income
 age         1.0     -0.5
 income      -0.5    1.0
 
 
-# `suggest_imputation`
-suggest_imputation(df)
+# missing_how_type
+missing_how_type(df)
+>>>
+This data frame have 2 missing values, below is the number of missing values for each column:
+age        1
+income     1
+dtype: int64
+
+- Columns with True value is Missing Completely at Random (MCAR)
+- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)
+- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation
+
+        MCAR
+target  
+age     True
+income  True
 ```
 
 ## **Python Ecosystem**
