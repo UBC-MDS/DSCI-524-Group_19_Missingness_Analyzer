@@ -42,6 +42,15 @@ def suggest_imputation(df, missingness_type = None):
     # Structure and parts of the code written with Claude AI
 
     try:
+
+        if df.empty:
+            return {
+                'method': 'none',
+                'reasoning': ['Empty dataframe passed'],
+                'warnings': [],
+                'missingness_amount': 0
+            }
+
         cols_with_missing = df.columns[df.isnull().any()].tolist()
 
         if not cols_with_missing:
@@ -52,13 +61,6 @@ def suggest_imputation(df, missingness_type = None):
                 'missingness_amount': 0
             }
 
-        if df.empty:
-            return {
-                'method': 'none',
-                'reasoning': ['Empty dataframe passed'],
-                'warnings': [],
-                'missingness_amount': 0
-            }
 
         # Calculate overall missing percentage
         total_missing = df.isnull().sum().sum()
@@ -141,3 +143,6 @@ def suggest_imputation(df, missingness_type = None):
         }
     except AttributeError:
         print("Error: Invalid input detected")
+
+result = suggest_imputation(pd.DataFrame())
+print(result)

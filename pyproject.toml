@@ -12,24 +12,20 @@ requires = ["hatchling", "hatch-vcs"]
 
 [project]
 name = "missingness_analyzer"
-# You can chose to use dynamic versioning with hatch or static where you add it manually.
-#version = "0.5.0"
 dynamic = ["version"]
 
-[tool.hatch.version]
-source = "vcs"
-raw-options = { version_scheme = "no-guess-dev", local_scheme = "no-local-version" }
+description = "A package to identify the type of missingness in a dataframe and suggest imputation strategies"
 
-description = "A package to identifying the type of missigness in a dataframe and suggest imputation strategies"
 authors = [
     { name = "Rocco Lee", email = "roccolee18@gmail.com" },
     { name = "Nguyen Nguyen", email = "nguyenuyennguyen03@gmail.com" },
-    { name = "Shuhang Li", email = "roccolee18@gmail.com" },
+    { name = "Shuhang Li", email = "roccolee18@gmail.com" }
 ]
-license = "MIT"
-requires-python = ">= 3.10" # Adjust based on the minimum version of Python that you support
-readme = {"file" = "README.md", "content-type" = "text/markdown"}
-# Please consult https://pypi.org/classifiers/ for a full list.
+
+license = { text = "MIT" }
+requires-python = ">=3.10"
+readme = "README.md"
+
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
@@ -37,6 +33,14 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
 ]
+
+keywords = []
+dependencies = []
+
+[tool.hatch.version]
+source = "vcs"
+raw-options = { version_scheme = "no-guess-dev", local_scheme = "no-local-version" }
+
 # TODO: add keywords
 keywords = []
 # TODO: add dependencies
