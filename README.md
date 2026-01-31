@@ -10,7 +10,7 @@ Rocco Lee, Nguyen Nguyen, Shuhang Li
 
 ## **About**
 
-Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in certain contexts.
+Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rows in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in certain contexts.
 
 Link to package: https://test.pypi.org/project/missingness-analyzer/
 
@@ -32,7 +32,7 @@ git clone git@github.com:your_name_here/missingness_analyzer.git
 conda env create -f environment.yml
 ```
 
-4.  Once the environment is created, activiate it with:
+4.  Once the environment is created, activate it with:
 
 ``` bash
 conda activate 524-Group-19
@@ -69,7 +69,7 @@ pytest
 
 -   `type_of_missing_and_how`
 
-    -   This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)
+    -   This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR). It will return
 
 -   `suggest_imputation`
 
@@ -82,15 +82,15 @@ pytest
 ## **Usage**
 
 ``` python
-from missingness-analyzer.type_of_missing_and_how import missing_how_type
-from missingness-analyzer.missing_correlation_matrix import missing_correlation_matrix
-from missingness-analyzer.suggest_imputation import suggest_imputation
+from missingness_analyzer.type_of_missing_and_how import missing_how_type
+from missingness_analyzer.missing_correlation_matrix import missing_correlation_matrix
+from missingness_analyzer.suggest_imputation import suggest_imputation
 
 df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
 
 # suggest_imputation
 results = suggest_imputation(df)
-print(result['method']) 
+print(results['method']) 
 >>> KNNImputer (k=5)
 
 # missing_correlation_matrix
@@ -119,6 +119,35 @@ age     True
 income  True
 ```
 
+## Dataset Acknowledgement
+
+This project was developed using the following dataset:
+
+Dataset name: [Retail Product Dataset with Missing Values](https://www.kaggle.com/datasets/himelsarder/retail-product-dataset-with-missing-values/data)
+
+Source: Kaggle
+
+All rights and licensing terms remain with the original dataset author.
+
+## Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this package.
+
+## Code of Conduct
+
+Please note that this project is released with a [Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+## License
+
+This project is licensed under the MIT License, please see [LICENSE](LICENSE) file for details.
+
+## Citation
+
+If you use this package, please cite as the following:
+
+Lee, R., Nguyen, N., & Li, S. (20256) *missingness-analyzer* (Version x.x.x).\
+https://test.pypi.org/project/missingness-analyzer/
+
 ## **Python Ecosystem**
 
 Below is a summary of existing packages related to our topic:
@@ -127,4 +156,4 @@ Below is a summary of existing packages related to our topic:
 
 **`mdatagen`** (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.
 
-**`Other Existing Packages`** (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on notonly the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data.
+**`Other Existing Packages`** (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on not only the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data.
