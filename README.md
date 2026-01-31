@@ -1,4 +1,4 @@
-# DSCI_524_Group_19_Missingness_Analyzer
+# Missingness Analyzer
 
 Canada, Vancouver
 
@@ -78,6 +78,29 @@ pytest
 -   `missing_correlation_matrix`
 
     -   This function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness
+
+## **Usage**
+
+``` python
+from missingness-analyzer.type_of_missing_and_how import missing_how_type
+from missingness-analyzer.missing_correlation_matrix import missing_correlation_matrix
+from missingness-analyzer.suggest_imputation import suggest_imputation
+
+df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
+
+# `missing_how_type`
+missing_how_type(df)
+
+# `missing_correlation_matrix`
+missing_correlation_matrix(df)
+            age     income
+age         1.0     -0.5
+income      -0.5    1.0
+
+
+# `suggest_imputation`
+suggest_imputation(df)
+```
 
 ## **Python Ecosystem**
 
