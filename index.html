@@ -132,6 +132,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./retrospective.html"> 
+<span class="menu-text">Retrospective</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -148,13 +152,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dsci_524_group_19_missingness_analyzer" id="toc-dsci_524_group_19_missingness_analyzer" class="nav-link active" data-scroll-target="#dsci_524_group_19_missingness_analyzer">DSCI_524_Group_19_Missingness_Analyzer</a>
+  <li><a href="#missingness-analyzer" id="toc-missingness-analyzer" class="nav-link active" data-scroll-target="#missingness-analyzer">Missingness Analyzer</a>
   <ul class="collapse">
   <li><a href="#contributors" id="toc-contributors" class="nav-link" data-scroll-target="#contributors"><strong>Contributors</strong></a></li>
   <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about"><strong>About</strong></a></li>
   <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting Up</a></li>
   <li><a href="#publishing-your-code" id="toc-publishing-your-code" class="nav-link" data-scroll-target="#publishing-your-code">Publishing Your Code</a></li>
   <li><a href="#list-of-functions" id="toc-list-of-functions" class="nav-link" data-scroll-target="#list-of-functions"><strong>List of Functions</strong></a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage"><strong>Usage</strong></a></li>
+  <li><a href="#dataset-acknowledgement" id="toc-dataset-acknowledgement" class="nav-link" data-scroll-target="#dataset-acknowledgement">Dataset Acknowledgement</a></li>
+  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing">Contributing</a></li>
+  <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of Conduct</a></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#citation" id="toc-citation" class="nav-link" data-scroll-target="#citation">Citation</a></li>
   <li><a href="#python-ecosystem" id="toc-python-ecosystem" class="nav-link" data-scroll-target="#python-ecosystem"><strong>Python Ecosystem</strong></a></li>
   </ul></li>
   </ul>
@@ -166,8 +176,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="dsci_524_group_19_missingness_analyzer" class="level1">
-<h1>DSCI_524_Group_19_Missingness_Analyzer</h1>
+<section id="missingness-analyzer" class="level1">
+<h1>Missingness Analyzer</h1>
+<p><img src="https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/actions/workflows/build.yml/badge.svg" class="img-fluid" alt="CI"> <img src="https://img.shields.io/pypi/pyversions/missingness-analyzer.png" class="img-fluid" alt="Python"></p>
 <p>Canada, Vancouver</p>
 <p>Creation of a data-science related package for DSCI 524 (Collaborative Software Development); a course in the Master of Data Science program at the University of British Columbia. 2025-2026.</p>
 <section id="contributors" class="level2">
@@ -176,11 +187,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="about" class="level2">
 <h2 class="anchored" data-anchor-id="about"><strong>About</strong></h2>
-<p>Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in ceertain contexts.</p>
+<p>Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rows in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in certain contexts.</p>
+<p>Link to package: https://test.pypi.org/project/missingness-analyzer/</p>
 </section>
 <section id="setting-up" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
-<p>Here’s how to setup missingness_analyzer for local development:</p>
+<p>Here’s how to set up missingness_analyzer for local development:</p>
 <ol type="1">
 <li><p>Fork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer</p></li>
 <li><p>Clone the fork locally using:</p></li>
@@ -191,13 +203,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
-<li>Once the environment is created, activiate it with:</li>
+<li>Once the environment is created, activate it with:</li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate 524-Group-19</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="5" type="1">
 <li>Install the package with:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-i</span> https://test.pypi.org/simple/ missingness-analyzer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="6" type="1">
 <li>Develop Away!</li>
 </ol>
@@ -224,49 +236,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="list-of-functions" class="level2">
 <h2 class="anchored" data-anchor-id="list-of-functions"><strong>List of Functions</strong></h2>
 <ul>
-<li><p>type_of_missing_and_how</p>
+<li><p><code>missing_how_type</code></p>
 <ul>
-<li><p>This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)</p></li>
-<li><p>Unit tests written for this function are:</p>
-<ul>
-<li><p>the_df()</p></li>
-<li><p>the_result()</p></li>
-<li><p>test_number_of_truefalse()</p></li>
-<li><p>test_raises_error_if_not_dataframe()</p></li>
-<li><p>test_if_alpha_is_optional(the_df, the_result)</p></li>
-<li><p>test_if_alpha_matter(the_df)</p></li>
-<li><p>test_return_none_if_no_missing()</p></li>
+<li>This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR). It will return</li>
 </ul></li>
-</ul></li>
-<li><p>suggest_imputation</p>
+<li><p><code>suggest_imputation</code></p>
 <ul>
-<li><p>This function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.</p></li>
-<li><p>Unit tests written for this function are:</p>
-<ul>
-<li><p>test_missingness_amount()</p></li>
-<li><p>test_no_missing()</p></li>
-<li><p>test_duplicate_col_names()</p></li>
-<li><p>test_whole_column_missing()</p></li>
+<li>This function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.</li>
 </ul></li>
-</ul></li>
-<li><p>missing_correlation_matrix</p>
+<li><p><code>missing_correlation_matrix</code></p>
 <ul>
-<li><p>This function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness</p></li>
-<li><p>Unit tests written for this function are:</p>
-<ul>
-<li><p>test_missing_corr_returns_dataframe()</p></li>
-<li><p>test_missing_corr_labels_match_input()</p></li>
-<li><p>test_missing_corr_diagonal()</p></li>
-</ul></li>
+<li>This function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness</li>
 </ul></li>
 </ul>
+</section>
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage"><strong>Usage</strong></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> missingness_analyzer.type_of_missing_and_how <span class="im">import</span> missing_how_type</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> missingness_analyzer.missing_correlation_matrix <span class="im">import</span> missing_correlation_matrix</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> missingness_analyzer.suggest_imputation <span class="im">import</span> suggest_imputation</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'age'</span>: [<span class="dv">25</span>, np.nan, <span class="dv">35</span>], <span class="st">'income'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, np.nan]})</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># suggest_imputation</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> suggest_imputation(df)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results[<span class="st">'method'</span>]) </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> KNNImputer (k<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># missing_correlation_matrix</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>missing_correlation_matrix(df)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            age     income</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>age         <span class="fl">1.0</span>     <span class="op">-</span><span class="fl">0.5</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>income      <span class="op">-</span><span class="fl">0.5</span>    <span class="fl">1.0</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># missing_how_type</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>missing_how_type(df)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>This data frame have <span class="dv">2</span> missing values, below <span class="kw">is</span> the number of missing values <span class="cf">for</span> each column:</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>age        <span class="dv">1</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>income     <span class="dv">1</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>dtype: int64</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> Columns <span class="cf">with</span> <span class="va">True</span> value <span class="kw">is</span> Missing Completely at Random (MCAR)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> Columns <span class="cf">with</span> <span class="va">False</span> value are either Missing at Random (MAR) <span class="kw">or</span> Missing Not at Random (MNAR)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> Since MAR <span class="kw">and</span> MNAR cannot be tested statistically <span class="kw">and</span> formally, additional domain expertise <span class="kw">is</span> needed <span class="cf">for</span> further investigation</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        MCAR</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>target  </span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>age     <span class="va">True</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>income  <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="dataset-acknowledgement" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-acknowledgement">Dataset Acknowledgement</h2>
+<p>This project was developed using the following dataset: - Dataset name: <a href="https://www.kaggle.com/datasets/himelsarder/retail-product-dataset-with-missing-values/data">Retail Product Dataset with Missing Values</a> - Source: Kaggle - License: CC0 1.0 Universal (Public Domain)</p>
+</section>
+<section id="contributing" class="level2">
+<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
+<p>Please see <a href="./CONTRIBUTING.html">CONTRIBUTING.md</a> for guidelines on how to contribute to this package.</p>
+</section>
+<section id="code-of-conduct" class="level2">
+<h2 class="anchored" data-anchor-id="code-of-conduct">Code of Conduct</h2>
+<p>Please note that this project is released with a <a href="./CODE_OF_CONDUCT.html">Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p>This project is licensed under the MIT License, please see <a href="LICENSE">LICENSE</a> file for details.</p>
+</section>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+<p>If you use this package, please cite as the following:</p>
+<p>Lee, R., Nguyen, N., &amp; Li, S. (2026) <em>missingness-analyzer</em> (Version 0.5.0).<br>
+https://test.pypi.org/project/missingness-analyzer/</p>
 </section>
 <section id="python-ecosystem" class="level2">
 <h2 class="anchored" data-anchor-id="python-ecosystem"><strong>Python Ecosystem</strong></h2>
 <p>Below is a summary of existing packages related to our topic:</p>
-<p><strong>scikit-na</strong> (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.</p>
-<p><strong>mdatagen</strong> (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.</p>
-<p><strong>Other Existing Packages</strong> (e.g.&nbsp;deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on notonly the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data.</p>
+<p><strong><code>scikit-na</code></strong> (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.</p>
+<p><strong><code>mdatagen</code></strong> (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.</p>
+<p><strong><code>Other Existing Packages</code></strong> (e.g.&nbsp;deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on not only the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data.</p>
 
 
 </section>

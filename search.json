@@ -7,53 +7,151 @@
     "text": "Group 19 Code of Conduct\nThis Code of Conduct outlines our commitment to fostering a positive, inclusive, and respectful environment for all members of Group 19. It includes:\n\nDiversity and Inclusivity Statement\nThis group is committed to creating a respectful and welcoming environment for everyone. Diversity of background, identity, and thought is valued and celebrated. All individuals, regardless of race, gender, age, disability, sexual orientation, religion, or any other characteristic, are treated with dignity and respect at all times\n\n\nExpected and Unacceptable Behaviour\n\nTreat all members with courtesy, respect, and fairness.\nUse inclusive and respectful language.\nValue and include diverse perspectives in all activities.\nAvoid discrimination, harassment, bullying, violence, threats, and offensive jokes or language.\nUnacceptable behaviours include, but are not limited to: harassment, discrimination, physical or verbal abuse, intimidation, exclusion, and retaliation against those who report concerns\n\n\n\nConsequences for Unacceptable Behaviour\n\nRemedial actions such as counselling, warnings, or mediation for minor or unintentional breaches.\nFormal disciplinary actions for serious or repeated breaches, which may include suspension or removal from the organization\n\n\n\nReporting and Response Procedure\n\nReport unacceptable behaviour to any designated leader or through an established reporting channel.\nAll reports are taken seriously, investigated promptly, and handled confidentially where possible.\nThose found in breach of the code may be subject to the outlined consequences.\nRetaliation against anyone reporting in good faith is itself a violation and will be addressed accordingly\n\nSigned: Group 19 Members"
   },
   {
-    "objectID": "reference/suggest_imputation.suggest_imputation.html",
-    "href": "reference/suggest_imputation.suggest_imputation.html",
-    "title": "suggest_imputation.suggest_imputation",
+    "objectID": "reference/type_of_missing_and_how.missing_how_type.html",
+    "href": "reference/type_of_missing_and_how.missing_how_type.html",
+    "title": "type_of_missing_and_how.missing_how_type",
     "section": "",
-    "text": "suggest_imputation.suggest_imputation(df, missingness_type=None)\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nThe input DataFrame containing missing values to analyze. missingness_type : str, optional (default=None) The type of missingness mechanism present in the data. Valid values: - ‘MCAR’: Missing Completely At Random - ‘MAR’: Missing At Random - ‘MAR’: Missing Not At Random If None, recommendation is based only on data characteristics.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ndict\nA dictionary containing the imputation recommendation with the following keys: - ‘method’ (str): Recommended imputation method (e.g., ‘SimpleImputer’, ‘KNNImputer’, ‘IterativeImputer (MICE)’, ‘interpolation’, or ‘none’) - ‘reasoning’ (list of str): Explanation of factors that influenced the recommendation - ‘warnings’ (list of str): Important caveats or concerns about the data\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = suggest_imputation(df, missingness_type='MAR')\n&gt;&gt;&gt; print(result['method'])\n'KNNImputer (k=5)'\n\n\n\n\nFor empty DataFrames or invalid inputs, returns method=‘none’ or method=‘error’\nHigh missingness (&gt;30%) may result in warnings about reliability"
+    "text": "type_of_missing_and_how.missing_how_type(df, alpha=0.05)\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset.\nThere are three types of missing data: - MCAR: Missing completely at random, which can be tested using the chi-squared function from the SciPy package. The chi-squared function helps test the independence of the columns in the dataset to determine whether the missingness is completely independent of each other - MAR: Missing at random. If the missingness is not MCAR, it may be MAR; however, further domain knowledge is required to make this determination. - MNAR: Missing not at random. Domain expertise is required to determine whether this type of missingness is present.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\n\nA pandas dataframe to analyze missingness.\nrequired\n\n\nalpha\n\nThe significant level to test the p.value that result from the chi-squared test\n0.05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR.\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; missing_how_type(df, alpha=0.05)\n    This data frame have 2 missing values, below is the number of missing values for each column:\n    age        1\n    income     1\n    dtype: int64\n- Columns with True value is Missing Completely at Random (MCAR)\n- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)\n- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation\n\n        MCAR\ntarget  \nage         True\nincome  True"
   },
   {
-    "objectID": "reference/suggest_imputation.suggest_imputation.html#parameters",
-    "href": "reference/suggest_imputation.suggest_imputation.html#parameters",
-    "title": "suggest_imputation.suggest_imputation",
+    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#parameters",
+    "href": "reference/type_of_missing_and_how.missing_how_type.html#parameters",
+    "title": "type_of_missing_and_how.missing_how_type",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nThe input DataFrame containing missing values to analyze. missingness_type : str, optional (default=None) The type of missingness mechanism present in the data. Valid values: - ‘MCAR’: Missing Completely At Random - ‘MAR’: Missing At Random - ‘MAR’: Missing Not At Random If None, recommendation is based only on data characteristics.\nrequired"
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\n\nA pandas dataframe to analyze missingness.\nrequired\n\n\nalpha\n\nThe significant level to test the p.value that result from the chi-squared test\n0.05"
   },
   {
-    "objectID": "reference/suggest_imputation.suggest_imputation.html#returns",
-    "href": "reference/suggest_imputation.suggest_imputation.html#returns",
-    "title": "suggest_imputation.suggest_imputation",
+    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#returns",
+    "href": "reference/type_of_missing_and_how.missing_how_type.html#returns",
+    "title": "type_of_missing_and_how.missing_how_type",
     "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\ndict\nA dictionary containing the imputation recommendation with the following keys: - ‘method’ (str): Recommended imputation method (e.g., ‘SimpleImputer’, ‘KNNImputer’, ‘IterativeImputer (MICE)’, ‘interpolation’, or ‘none’) - ‘reasoning’ (list of str): Explanation of factors that influenced the recommendation - ‘warnings’ (list of str): Important caveats or concerns about the data"
+    "text": "Name\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR."
   },
   {
-    "objectID": "reference/suggest_imputation.suggest_imputation.html#examples",
-    "href": "reference/suggest_imputation.suggest_imputation.html#examples",
-    "title": "suggest_imputation.suggest_imputation",
+    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#examples",
+    "href": "reference/type_of_missing_and_how.missing_how_type.html#examples",
+    "title": "type_of_missing_and_how.missing_how_type",
     "section": "",
-    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = suggest_imputation(df, missingness_type='MAR')\n&gt;&gt;&gt; print(result['method'])\n'KNNImputer (k=5)'"
+    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; missing_how_type(df, alpha=0.05)\n    This data frame have 2 missing values, below is the number of missing values for each column:\n    age        1\n    income     1\n    dtype: int64\n- Columns with True value is Missing Completely at Random (MCAR)\n- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)\n- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation\n\n        MCAR\ntarget  \nage         True\nincome  True"
   },
   {
-    "objectID": "reference/suggest_imputation.suggest_imputation.html#notes",
-    "href": "reference/suggest_imputation.suggest_imputation.html#notes",
-    "title": "suggest_imputation.suggest_imputation",
+    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
+    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
+    "title": "missing_correlation_matrix.missing_correlation_matrix",
     "section": "",
-    "text": "For empty DataFrames or invalid inputs, returns method=‘none’ or method=‘error’\nHigh missingness (&gt;30%) may result in warnings about reliability"
+    "text": "missing_correlation_matrix.missing_correlation_matrix(df)\nCalculate correlations between variables’ missingness patterns.\nFor each column in df, this function constructs a binary indicator (1 = value is missing, 0 = value is observed) and computes the pairwise correlation matrix of these indicators. High positive correlations flag variables that tend to be missing at the same time, which can reveal shared data-collection issues or common missingness mechanisms.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nA pandas DataFrame for which the pairwise correlations of missing values across columns should be computed.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA square DataFrame whose rows and columns correspond to the original variables, and whose entries give the correlation between their missingness indicators.\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = missing_correlation_matrix(df)\n                age     income\n    age             1.0         -0.5\n    income      -0.5        1.0"
   },
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
+    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#parameters",
+    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#parameters",
+    "title": "missing_correlation_matrix.missing_correlation_matrix",
     "section": "",
-    "text": "This package analyzes a given dataframe for the amount and type of missingness. It has logic to suggest an imputation method specific to the type of mmissingness found in the input dataframe, and has another function to display the correlation matrix of the columns with missing data.\n\n\n\nmissing_correlation_matrix.missing_correlation_matrix\nCalculate correlations between variables’ missingness patterns.\n\n\nsuggest_imputation.suggest_imputation\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\ntype_of_missing_and_how.missing_how_type\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset."
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nA pandas DataFrame for which the pairwise correlations of missing values across columns should be computed.\nrequired"
   },
   {
-    "objectID": "reference/index.html#missingness-analyzer",
-    "href": "reference/index.html#missingness-analyzer",
-    "title": "Function reference",
+    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#returns",
+    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#returns",
+    "title": "missing_correlation_matrix.missing_correlation_matrix",
     "section": "",
-    "text": "This package analyzes a given dataframe for the amount and type of missingness. It has logic to suggest an imputation method specific to the type of mmissingness found in the input dataframe, and has another function to display the correlation matrix of the columns with missing data.\n\n\n\nmissing_correlation_matrix.missing_correlation_matrix\nCalculate correlations between variables’ missingness patterns.\n\n\nsuggest_imputation.suggest_imputation\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\ntype_of_missing_and_how.missing_how_type\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset."
+    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA square DataFrame whose rows and columns correspond to the original variables, and whose entries give the correlation between their missingness indicators."
+  },
+  {
+    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#examples",
+    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#examples",
+    "title": "missing_correlation_matrix.missing_correlation_matrix",
+    "section": "",
+    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = missing_correlation_matrix(df)\n                age     income\n    age             1.0         -0.5\n    income      -0.5        1.0"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Canada, Vancouver\nCreation of a data-science related package for DSCI 524 (Collaborative Software Development); a course in the Master of Data Science program at the University of British Columbia. 2025-2026.\n\n\nRocco Lee, Nguyen Nguyen, Shuhang Li\n\n\n\nMissing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rows in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in certain contexts.\nLink to package: https://test.pypi.org/project/missingness-analyzer/\n\n\n\nHere’s how to set up missingness_analyzer for local development:\n\nFork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer\nClone the fork locally using:\n\ngit clone git@github.com:your_name_here/missingness_analyzer.git\n\nCreate the virtual environment with:\n\nconda env create -f environment.yml\n\nOnce the environment is created, activate it with:\n\nconda activate 524-Group-19\n\nInstall the package with:\n\npip install -i https://test.pypi.org/simple/ missingness-analyzer\n\nDevelop Away!\n\n\nMake sure to document your changes with comments\nIf you are adding new functions in new python files, ensure that the docstring for those functions are written with Numpy formatting.\n\n\n\n\nAfter fixing bugs or developing new features, here’s how you can deploy your changes\n\nVerify that all tests still pass with (run in terminal):\n\npytest\n\nOnce you have verified that all tests pass, commit and push your changes to the remote repository and create a pull request\nThis should automatically trigger a Github Workflow which automatically updates the HTML site containing documentation for this package, builds an artifact and deploys the changes to PyPI\n\n\nThe updated documentation can be found here\n\n\n\n\n\nmissing_how_type\n\nThis function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR). It will return\n\nsuggest_imputation\n\nThis function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.\n\nmissing_correlation_matrix\n\nThis function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness\n\n\n\n\n\nfrom missingness_analyzer.type_of_missing_and_how import missing_how_type\nfrom missingness_analyzer.missing_correlation_matrix import missing_correlation_matrix\nfrom missingness_analyzer.suggest_imputation import suggest_imputation\n\ndf = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n\n# suggest_imputation\nresults = suggest_imputation(df)\nprint(results['method']) \n&gt;&gt;&gt; KNNImputer (k=5)\n\n# missing_correlation_matrix\nmissing_correlation_matrix(df)\n&gt;&gt;&gt;\n            age     income\nage         1.0     -0.5\nincome      -0.5    1.0\n\n\n# missing_how_type\nmissing_how_type(df)\n&gt;&gt;&gt;\nThis data frame have 2 missing values, below is the number of missing values for each column:\nage        1\nincome     1\ndtype: int64\n\n- Columns with True value is Missing Completely at Random (MCAR)\n- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)\n- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation\n\n        MCAR\ntarget  \nage     True\nincome  True\n\n\n\nThis project was developed using the following dataset: - Dataset name: Retail Product Dataset with Missing Values - Source: Kaggle - License: CC0 1.0 Universal (Public Domain)\n\n\n\nPlease see CONTRIBUTING.md for guidelines on how to contribute to this package.\n\n\n\nPlease note that this project is released with a Code of Conduct. By participating in this project you agree to abide by its terms.\n\n\n\nThis project is licensed under the MIT License, please see LICENSE file for details.\n\n\n\nIf you use this package, please cite as the following:\nLee, R., Nguyen, N., & Li, S. (2026) missingness-analyzer (Version 0.5.0).\nhttps://test.pypi.org/project/missingness-analyzer/\n\n\n\nBelow is a summary of existing packages related to our topic:\nscikit-na (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.\nmdatagen (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.\nOther Existing Packages (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on not only the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data."
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Rocco Lee, Nguyen Nguyen, Shuhang Li"
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rows in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in certain contexts.\nLink to package: https://test.pypi.org/project/missingness-analyzer/"
+  },
+  {
+    "objectID": "index.html#setting-up",
+    "href": "index.html#setting-up",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Here’s how to set up missingness_analyzer for local development:\n\nFork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer\nClone the fork locally using:\n\ngit clone git@github.com:your_name_here/missingness_analyzer.git\n\nCreate the virtual environment with:\n\nconda env create -f environment.yml\n\nOnce the environment is created, activate it with:\n\nconda activate 524-Group-19\n\nInstall the package with:\n\npip install -i https://test.pypi.org/simple/ missingness-analyzer\n\nDevelop Away!\n\n\nMake sure to document your changes with comments\nIf you are adding new functions in new python files, ensure that the docstring for those functions are written with Numpy formatting."
+  },
+  {
+    "objectID": "index.html#publishing-your-code",
+    "href": "index.html#publishing-your-code",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "After fixing bugs or developing new features, here’s how you can deploy your changes\n\nVerify that all tests still pass with (run in terminal):\n\npytest\n\nOnce you have verified that all tests pass, commit and push your changes to the remote repository and create a pull request\nThis should automatically trigger a Github Workflow which automatically updates the HTML site containing documentation for this package, builds an artifact and deploys the changes to PyPI\n\n\nThe updated documentation can be found here"
+  },
+  {
+    "objectID": "index.html#list-of-functions",
+    "href": "index.html#list-of-functions",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "missing_how_type\n\nThis function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR). It will return\n\nsuggest_imputation\n\nThis function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.\n\nmissing_correlation_matrix\n\nThis function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness"
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "from missingness_analyzer.type_of_missing_and_how import missing_how_type\nfrom missingness_analyzer.missing_correlation_matrix import missing_correlation_matrix\nfrom missingness_analyzer.suggest_imputation import suggest_imputation\n\ndf = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n\n# suggest_imputation\nresults = suggest_imputation(df)\nprint(results['method']) \n&gt;&gt;&gt; KNNImputer (k=5)\n\n# missing_correlation_matrix\nmissing_correlation_matrix(df)\n&gt;&gt;&gt;\n            age     income\nage         1.0     -0.5\nincome      -0.5    1.0\n\n\n# missing_how_type\nmissing_how_type(df)\n&gt;&gt;&gt;\nThis data frame have 2 missing values, below is the number of missing values for each column:\nage        1\nincome     1\ndtype: int64\n\n- Columns with True value is Missing Completely at Random (MCAR)\n- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)\n- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation\n\n        MCAR\ntarget  \nage     True\nincome  True"
+  },
+  {
+    "objectID": "index.html#dataset-acknowledgement",
+    "href": "index.html#dataset-acknowledgement",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "This project was developed using the following dataset: - Dataset name: Retail Product Dataset with Missing Values - Source: Kaggle - License: CC0 1.0 Universal (Public Domain)"
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Please see CONTRIBUTING.md for guidelines on how to contribute to this package."
+  },
+  {
+    "objectID": "index.html#code-of-conduct",
+    "href": "index.html#code-of-conduct",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Please note that this project is released with a Code of Conduct. By participating in this project you agree to abide by its terms."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "This project is licensed under the MIT License, please see LICENSE file for details."
+  },
+  {
+    "objectID": "index.html#citation",
+    "href": "index.html#citation",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "If you use this package, please cite as the following:\nLee, R., Nguyen, N., & Li, S. (2026) missingness-analyzer (Version 0.5.0).\nhttps://test.pypi.org/project/missingness-analyzer/"
+  },
+  {
+    "objectID": "index.html#python-ecosystem",
+    "href": "index.html#python-ecosystem",
+    "title": "Missingness Analyzer",
+    "section": "",
+    "text": "Below is a summary of existing packages related to our topic:\nscikit-na (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.\nmdatagen (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.\nOther Existing Packages (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on not only the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data."
   },
   {
     "objectID": "CONTRIBUTING.html",
@@ -105,108 +203,73 @@
     "text": "If you have any questions, feel free to reach out to open an issue for assistance.\nThank you for helping make MissingnessAnalyzer great!"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSCI_524_Group_19_Missingness_Analyzer",
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
     "section": "",
-    "text": "Canada, Vancouver\nCreation of a data-science related package for DSCI 524 (Collaborative Software Development); a course in the Master of Data Science program at the University of British Columbia. 2025-2026.\n\n\nRocco Lee, Nguyen Nguyen, Shuhang Li\n\n\n\nMissing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in ceertain contexts.\n\n\n\nHere’s how to setup missingness_analyzer for local development:\n\nFork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer\nClone the fork locally using:\n\ngit clone git@github.com:your_name_here/missingness_analyzer.git\n\nCreate the virtual environment with:\n\nconda env create -f environment.yml\n\nOnce the environment is created, activiate it with:\n\nconda activate 524-Group-19\n\nInstall the package with:\n\npip install -e .\n\nDevelop Away!\n\n\nMake sure to document your changes with comments\nIf you are adding new functions in new python files, ensure that the docstring for those functions are written with Numpy formatting.\n\n\n\n\nAfter fixing bugs or developing new features, here’s how you can deploy your changes\n\nVerify that all tests still pass with (run in terminal):\n\npytest\n\nOnce you have verified that all tests pass, commit and push your changes to the remote repository and create a pull request\nThis should automatically trigger a Github Workflow which automatically updates the HTML site containing documentation for this package, builds an artifact and deploys the changes to PyPI\n\n\nThe updated documentation can be found here\n\n\n\n\n\ntype_of_missing_and_how\n\nThis function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)\nUnit tests written for this function are:\n\nthe_df()\nthe_result()\ntest_number_of_truefalse()\ntest_raises_error_if_not_dataframe()\ntest_if_alpha_is_optional(the_df, the_result)\ntest_if_alpha_matter(the_df)\ntest_return_none_if_no_missing()\n\n\nsuggest_imputation\n\nThis function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.\nUnit tests written for this function are:\n\ntest_missingness_amount()\ntest_no_missing()\ntest_duplicate_col_names()\ntest_whole_column_missing()\n\n\nmissing_correlation_matrix\n\nThis function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness\nUnit tests written for this function are:\n\ntest_missing_corr_returns_dataframe()\ntest_missing_corr_labels_match_input()\ntest_missing_corr_diagonal()\n\n\n\n\n\n\nBelow is a summary of existing packages related to our topic:\nscikit-na (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.\nmdatagen (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.\nOther Existing Packages (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on notonly the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data."
+    "text": "This package analyzes a given dataframe for the amount and type of missingness. It has logic to suggest an imputation method specific to the type of mmissingness found in the input dataframe, and has another function to display the correlation matrix of the columns with missing data.\n\n\n\nmissing_correlation_matrix.missing_correlation_matrix\nCalculate correlations between variables’ missingness patterns.\n\n\nsuggest_imputation.suggest_imputation\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\ntype_of_missing_and_how.missing_how_type\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset."
   },
   {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "DSCI_524_Group_19_Missingness_Analyzer",
+    "objectID": "reference/index.html#missingness-analyzer",
+    "href": "reference/index.html#missingness-analyzer",
+    "title": "Function reference",
     "section": "",
-    "text": "Rocco Lee, Nguyen Nguyen, Shuhang Li"
+    "text": "This package analyzes a given dataframe for the amount and type of missingness. It has logic to suggest an imputation method specific to the type of mmissingness found in the input dataframe, and has another function to display the correlation matrix of the columns with missing data.\n\n\n\nmissing_correlation_matrix.missing_correlation_matrix\nCalculate correlations between variables’ missingness patterns.\n\n\nsuggest_imputation.suggest_imputation\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\ntype_of_missing_and_how.missing_how_type\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset."
   },
   {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "DSCI_524_Group_19_Missingness_Analyzer",
+    "objectID": "reference/suggest_imputation.suggest_imputation.html",
+    "href": "reference/suggest_imputation.suggest_imputation.html",
+    "title": "suggest_imputation.suggest_imputation",
     "section": "",
-    "text": "Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in ceertain contexts."
+    "text": "suggest_imputation.suggest_imputation(df, missingness_type=None)\nSuggest a single imputation strategy for handling missing data in a DataFrame.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nThe input DataFrame containing missing values to analyze. missingness_type : str, optional (default=None) The type of missingness mechanism present in the data. Valid values: - ‘MCAR’: Missing Completely At Random - ‘MAR’: Missing At Random - ‘MAR’: Missing Not At Random If None, recommendation is based only on data characteristics.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ndict\nA dictionary containing the imputation recommendation with the following keys: - ‘method’ (str): Recommended imputation method (e.g., ‘SimpleImputer’, ‘KNNImputer’, ‘IterativeImputer (MICE)’, ‘interpolation’, or ‘none’) - ‘reasoning’ (list of str): Explanation of factors that influenced the recommendation - ‘warnings’ (list of str): Important caveats or concerns about the data\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = suggest_imputation(df, missingness_type='MAR')\n&gt;&gt;&gt; print(result['method'])\n'KNNImputer (k=5)'\n\n\n\n\nFor empty DataFrames or invalid inputs, returns method=‘none’ or method=‘error’\nHigh missingness (&gt;30%) may result in warnings about reliability"
   },
   {
-    "objectID": "index.html#setting-up",
-    "href": "index.html#setting-up",
-    "title": "DSCI_524_Group_19_Missingness_Analyzer",
+    "objectID": "reference/suggest_imputation.suggest_imputation.html#parameters",
+    "href": "reference/suggest_imputation.suggest_imputation.html#parameters",
+    "title": "suggest_imputation.suggest_imputation",
     "section": "",
-    "text": "Here’s how to setup missingness_analyzer for local development:\n\nFork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer\nClone the fork locally using:\n\ngit clone git@github.com:your_name_here/missingness_analyzer.git\n\nCreate the virtual environment with:\n\nconda env create -f environment.yml\n\nOnce the environment is created, activiate it with:\n\nconda activate 524-Group-19\n\nInstall the package with:\n\npip install -e .\n\nDevelop Away!\n\n\nMake sure to document your changes with comments\nIf you are adding new functions in new python files, ensure that the docstring for those functions are written with Numpy formatting."
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nThe input DataFrame containing missing values to analyze. missingness_type : str, optional (default=None) The type of missingness mechanism present in the data. Valid values: - ‘MCAR’: Missing Completely At Random - ‘MAR’: Missing At Random - ‘MAR’: Missing Not At Random If None, recommendation is based only on data characteristics.\nrequired"
   },
   {
-    "objectID": "index.html#publishing-your-code",
-    "href": "index.html#publishing-your-code",
-    "title": "DSCI_524_Group_19_Missingness_Analyzer",
+    "objectID": "reference/suggest_imputation.suggest_imputation.html#returns",
+    "href": "reference/suggest_imputation.suggest_imputation.html#returns",
+    "title": "suggest_imputation.suggest_imputation",
     "section": "",
-    "text": "After fixing bugs or developing new features, here’s how you can deploy your changes\n\nVerify that all tests still pass with (run in terminal):\n\npytest\n\nOnce you have verified that all tests pass, commit and push your changes to the remote repository and create a pull request\nThis should automatically trigger a Github Workflow which automatically updates the HTML site containing documentation for this package, builds an artifact and deploys the changes to PyPI\n\n\nThe updated documentation can be found here"
+    "text": "Name\nType\nDescription\n\n\n\n\n\ndict\nA dictionary containing the imputation recommendation with the following keys: - ‘method’ (str): Recommended imputation method (e.g., ‘SimpleImputer’, ‘KNNImputer’, ‘IterativeImputer (MICE)’, ‘interpolation’, or ‘none’) - ‘reasoning’ (list of str): Explanation of factors that influenced the recommendation - ‘warnings’ (list of str): Important caveats or concerns about the data"
   },
   {
-    "objectID": "index.html#list-of-functions",
-    "href": "index.html#list-of-functions",
-    "title": "DSCI_524_Group_19_Missingness_Analyzer",
+    "objectID": "reference/suggest_imputation.suggest_imputation.html#examples",
+    "href": "reference/suggest_imputation.suggest_imputation.html#examples",
+    "title": "suggest_imputation.suggest_imputation",
     "section": "",
-    "text": "type_of_missing_and_how\n\nThis function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)\nUnit tests written for this function are:\n\nthe_df()\nthe_result()\ntest_number_of_truefalse()\ntest_raises_error_if_not_dataframe()\ntest_if_alpha_is_optional(the_df, the_result)\ntest_if_alpha_matter(the_df)\ntest_return_none_if_no_missing()\n\n\nsuggest_imputation\n\nThis function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.\nUnit tests written for this function are:\n\ntest_missingness_amount()\ntest_no_missing()\ntest_duplicate_col_names()\ntest_whole_column_missing()\n\n\nmissing_correlation_matrix\n\nThis function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness\nUnit tests written for this function are:\n\ntest_missing_corr_returns_dataframe()\ntest_missing_corr_labels_match_input()\ntest_missing_corr_diagonal()"
+    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = suggest_imputation(df, missingness_type='MAR')\n&gt;&gt;&gt; print(result['method'])\n'KNNImputer (k=5)'"
   },
   {
-    "objectID": "index.html#python-ecosystem",
-    "href": "index.html#python-ecosystem",
-    "title": "DSCI_524_Group_19_Missingness_Analyzer",
+    "objectID": "reference/suggest_imputation.suggest_imputation.html#notes",
+    "href": "reference/suggest_imputation.suggest_imputation.html#notes",
+    "title": "suggest_imputation.suggest_imputation",
     "section": "",
-    "text": "Below is a summary of existing packages related to our topic:\nscikit-na (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.\nmdatagen (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.\nOther Existing Packages (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on notonly the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data."
+    "text": "For empty DataFrames or invalid inputs, returns method=‘none’ or method=‘error’\nHigh missingness (&gt;30%) may result in warnings about reliability"
   },
   {
-    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
-    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html",
-    "title": "missing_correlation_matrix.missing_correlation_matrix",
+    "objectID": "retrospective.html",
+    "href": "retrospective.html",
+    "title": "Project Retrospective",
     "section": "",
-    "text": "missing_correlation_matrix.missing_correlation_matrix(df)\nCalculate correlations between variables’ missingness patterns.\nFor each column in df, this function constructs a binary indicator (1 = value is missing, 0 = value is observed) and computes the pairwise correlation matrix of these indicators. High positive correlations flag variables that tend to be missing at the same time, which can reveal shared data-collection issues or common missingness mechanisms.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nA pandas DataFrame for which the pairwise correlations of missing values across columns should be computed.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA square DataFrame whose rows and columns correspond to the original variables, and whose entries give the correlation between their missingness indicators.\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = missing_correlation_matrix(df)\n                age     income\n    age             1.0         -0.5\n    income      -0.5        1.0"
+    "text": "This package mainly revolved around applying best practices of the Github workflow. A clear set of rules has been laid out and followed by each member throughout the project. Those being: Issues being used as a form of communication - Letting members know when new tasks are available, tracking who’s doing what, and mapping associated issues with the pull request in which they were completed in. As the project’s main focus is on applications in Pandas dataframes, a lot of the package was written in Python. However, Quarto served as a great tool to help visually render documentation in an aesthetically pleasing way and makes it easier if we decide to make a presentation out of our markdown files in the future. Github Actions was used as a CI/CD tool to ease the chore of manually integrating and deploying changes and new functionality to the web. It gave us the option to easily validate that all of our previous unit tests still passed when new functions were written, and automated the deployment of new features to the hosting service where our package is publically accessible (Test PyPI)."
   },
   {
-    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#parameters",
-    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#parameters",
-    "title": "missing_correlation_matrix.missing_correlation_matrix",
+    "objectID": "retrospective.html#developing-this-package",
+    "href": "retrospective.html#developing-this-package",
+    "title": "Project Retrospective",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\npd.DataFrame\nA pandas DataFrame for which the pairwise correlations of missing values across columns should be computed.\nrequired"
+    "text": "This package mainly revolved around applying best practices of the Github workflow. A clear set of rules has been laid out and followed by each member throughout the project. Those being: Issues being used as a form of communication - Letting members know when new tasks are available, tracking who’s doing what, and mapping associated issues with the pull request in which they were completed in. As the project’s main focus is on applications in Pandas dataframes, a lot of the package was written in Python. However, Quarto served as a great tool to help visually render documentation in an aesthetically pleasing way and makes it easier if we decide to make a presentation out of our markdown files in the future. Github Actions was used as a CI/CD tool to ease the chore of manually integrating and deploying changes and new functionality to the web. It gave us the option to easily validate that all of our previous unit tests still passed when new functions were written, and automated the deployment of new features to the hosting service where our package is publically accessible (Test PyPI)."
   },
   {
-    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#returns",
-    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#returns",
-    "title": "missing_correlation_matrix.missing_correlation_matrix",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA square DataFrame whose rows and columns correspond to the original variables, and whose entries give the correlation between their missingness indicators."
-  },
-  {
-    "objectID": "reference/missing_correlation_matrix.missing_correlation_matrix.html#examples",
-    "href": "reference/missing_correlation_matrix.missing_correlation_matrix.html#examples",
-    "title": "missing_correlation_matrix.missing_correlation_matrix",
-    "section": "",
-    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; result = missing_correlation_matrix(df)\n                age     income\n    age             1.0         -0.5\n    income      -0.5        1.0"
-  },
-  {
-    "objectID": "reference/type_of_missing_and_how.missing_how_type.html",
-    "href": "reference/type_of_missing_and_how.missing_how_type.html",
-    "title": "type_of_missing_and_how.missing_how_type",
-    "section": "",
-    "text": "type_of_missing_and_how.missing_how_type(df, alpha=0.05)\nThis function will analyze and print out a report of missing values and the type of missingness in the dataset.\nThere are three types of missing data: - MCAR: Missing completely at random, which can be tested using the chi-squared function from the SciPy package. The chi-squared function helps test the independence of the columns in the dataset to determine whether the missingness is completely independent of each other - MAR: Missing at random. If the missingness is not MCAR, it may be MAR; however, further domain knowledge is required to make this determination. - MNAR: Missing not at random. Domain expertise is required to determine whether this type of missingness is present.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndf\n\nA pandas dataframe to analyze missingness.\nrequired\n\n\nalpha\n\nThe significant level to test the p.value that result from the chi-squared test\n0.05\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR.\n\n\n\n\n\n\n&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; missing_how_type(df, alpha=0.05)\n    This data frame have 2 missing values, below is the number of missing values for each column:\n    age        1\n    income     1\n    dtype: int64\n- Columns with True value is Missing Completely at Random (MCAR)\n- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)\n- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation\n\n        MCAR\ntarget  \nage         True\nincome  True"
-  },
-  {
-    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#parameters",
-    "href": "reference/type_of_missing_and_how.missing_how_type.html#parameters",
-    "title": "type_of_missing_and_how.missing_how_type",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndf\n\nA pandas dataframe to analyze missingness.\nrequired\n\n\nalpha\n\nThe significant level to test the p.value that result from the chi-squared test\n0.05"
-  },
-  {
-    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#returns",
-    "href": "reference/type_of_missing_and_how.missing_how_type.html#returns",
-    "title": "type_of_missing_and_how.missing_how_type",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\npandas.DataFrame\nThe table contains two columns: one shows the names of the columns in the dataset, and the other indicates whether each column is MCAR, MAR, or MNAR. If the value is True, the column is MCAR. If the value is False, the column is either MAR or MNAR."
-  },
-  {
-    "objectID": "reference/type_of_missing_and_how.missing_how_type.html#examples",
-    "href": "reference/type_of_missing_and_how.missing_how_type.html#examples",
-    "title": "type_of_missing_and_how.missing_how_type",
-    "section": "",
-    "text": "&gt;&gt;&gt; df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})\n&gt;&gt;&gt; missing_how_type(df, alpha=0.05)\n    This data frame have 2 missing values, below is the number of missing values for each column:\n    age        1\n    income     1\n    dtype: int64\n- Columns with True value is Missing Completely at Random (MCAR)\n- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)\n- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation\n\n        MCAR\ntarget  \nage         True\nincome  True"
+    "objectID": "retrospective.html#scaling-up",
+    "href": "retrospective.html#scaling-up",
+    "title": "Project Retrospective",
+    "section": "Scaling Up",
+    "text": "Scaling Up\nIf we were given the task of scaling up this project, using the Git workflow versus the traditional Github workflow should provide a more streamlined collaboration process. Github would still be our version control system of choice, as it is what the Git workflow is based on. The main difference is that there would be a more ridgid approval process for suggesting and implementing new changes to the package. For example, a proper template would be in place to create new issues. This template would clearly outline where the suggestion/fix come from, and how implementing it would positively impact the package. Implementing this practice would also give clarity to specific components of the package that the suggestion/fix is targeted towards. For larger projects, the Kanban board would also take a more active role in agile devlopment practices. The Kanban board would not only be used to track each team member’s current workload and document past work, it would also serve as a discussion board for cross team communication and workload re-balancing should a team memeber become absent during the project. A complete Ci/CD pipeline living on Github Actions would also have to be configured for a streamlined development process. This pipeline should handle everything but development of new features, such as ensuring backward compatability, edge case handling, and automatically updating all documentation (e.g. README, package website, package version on hosting platform, etc.)."
   }
 ]
