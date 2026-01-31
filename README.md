@@ -1,5 +1,8 @@
 # Missingness Analyzer
 
+![CI](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/actions/workflows/build.yml/badge.svg)
+![Python](https://img.shields.io/pypi/pyversions/missingness-analyzer)
+
 Canada, Vancouver
 
 Creation of a data-science related package for DSCI 524 (Collaborative Software Development); a course in the Master of Data Science program at the University of British Columbia. 2025-2026.
@@ -16,7 +19,7 @@ Link to package: https://test.pypi.org/project/missingness-analyzer/
 
 ## Setting Up
 
-Here's how to setup missingness_analyzer for local development:
+Here's how to set up missingness_analyzer for local development:
 
 1.  Fork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer
 
@@ -121,13 +124,10 @@ income  True
 
 ## Dataset Acknowledgement
 
-This project was developed using the following dataset:
-
-Dataset name: [Retail Product Dataset with Missing Values](https://www.kaggle.com/datasets/himelsarder/retail-product-dataset-with-missing-values/data)
-
-Source: Kaggle
-
-All rights and licensing terms remain with the original dataset author.
+This project was developed using the following dataset:\
+- Dataset name: [Retail Product Dataset with Missing Values](https://www.kaggle.com/datasets/himelsarder/retail-product-dataset-with-missing-values/data)\
+- Source: Kaggle\
+- License: CC0 1.0 Universal (Public Domain)
 
 ## Contributing
 
@@ -145,7 +145,7 @@ This project is licensed under the MIT License, please see [LICENSE](LICENSE) fi
 
 If you use this package, please cite as the following:
 
-Lee, R., Nguyen, N., & Li, S. (20256) *missingness-analyzer* (Version x.x.x).\
+Lee, R., Nguyen, N., & Li, S. (2026) *missingness-analyzer* (Version 0.5.0).\
 https://test.pypi.org/project/missingness-analyzer/
 
 ## **Python Ecosystem**
