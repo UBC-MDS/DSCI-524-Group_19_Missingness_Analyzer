@@ -10,7 +10,9 @@ Rocco Lee, Nguyen Nguyen, Shuhang Li
 
 ## **About**
 
-Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in ceertain contexts.
+Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in certain contexts.
+
+Link to package: https://test.pypi.org/project/missingness-analyzer/
 
 ## Setting Up 
 
@@ -36,7 +38,7 @@ conda activate 524-Group-19
 
 5. Install the package with:
 ```bash
-pip install -e .
+pip install -i https://test.pypi.org/simple/ missingness-analyzer
 ```
 
 6. Develop Away!
