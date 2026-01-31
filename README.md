@@ -1,4 +1,7 @@
-# DSCI_524_Group_19_Missingness_Analyzer
+# Missingness Analyzer
+
+![CI](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/actions/workflows/build.yml/badge.svg)
+![Python](https://img.shields.io/pypi/pyversions/missingness-analyzer)
 
 Canada, Vancouver
 
@@ -10,113 +13,147 @@ Rocco Lee, Nguyen Nguyen, Shuhang Li
 
 ## **About**
 
-Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rwos in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in certain contexts.
+Missing data imputation/handling is one of the most common forms of data cleaning that needs to happen in any analysis project. Large amounts of missing data can heavily skew the distribution of data or labels within the dataset, or invalidate large portions of rows in the dataset if an imputation strategy is not defined. The vision for this package is to not only give surface level analysis of how much missing data there is in a given dataset, but also to identify potential patterns to the missing data, such as Missing Completely At Random (MCAR), Missing At Random (MAR) or Missing Not At Random (MNAR), and use machine learning algorithms to give a sensible suggestion to the imputation strategy that would make sense to be used in certain contexts.
 
 Link to package: https://test.pypi.org/project/missingness-analyzer/
 
-## Setting Up 
+## Setting Up
 
-Here's how to setup missingness_analyzer for local development:
+Here's how to set up missingness_analyzer for local development:
 
-1. Fork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer
+1.  Fork the repository: https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer
 
-2. Clone the fork locally using:
+2.  Clone the fork locally using:
 
-```bash 
+``` bash
 git clone git@github.com:your_name_here/missingness_analyzer.git
 ```
 
-3. Create the virtual environment with:
-```bash 
+3.  Create the virtual environment with:
+
+``` bash
 conda env create -f environment.yml
 ```
 
-4. Once the environment is created, activiate it with:
-```bash
+4.  Once the environment is created, activate it with:
+
+``` bash
 conda activate 524-Group-19
 ```
 
-5. Install the package with:
-```bash
+5.  Install the package with:
+
+``` bash
 pip install -i https://test.pypi.org/simple/ missingness-analyzer
 ```
 
-6. Develop Away!
-  * Make sure to document your changes with comments
-  * If you are adding new functions in new python files, ensure that the docstring for those functions are written with Numpy formatting.
+6.  Develop Away!
+
+-   Make sure to document your changes with comments
+-   If you are adding new functions in new python files, ensure that the docstring for those functions are written with Numpy formatting.
 
 ## Publishing Your Code
 
 After fixing bugs or developing new features, here's how you can deploy your changes
 
-1. Verify that all tests still pass with (run in terminal):
-```bash
+1.  Verify that all tests still pass with (run in terminal):
+
+``` bash
 pytest
 ```
 
-2. Once you have verified that all tests pass, commit and push your changes to the remote repository and create a pull request
+2.  Once you have verified that all tests pass, commit and push your changes to the remote repository and create a pull request
 
-3. This should automatically trigger a Github Workflow which automatically updates the HTML site containing documentation for this package, builds an artifact and deploys the changes to PyPI
-  * The updated documentation can be found [here](https://ubc-mds.github.io/DSCI-524-Group_19_Missingness_Analyzer/CONTRIBUTING.html)
+3.  This should automatically trigger a Github Workflow which automatically updates the HTML site containing documentation for this package, builds an artifact and deploys the changes to PyPI
+
+-   The updated documentation can be found [here](https://ubc-mds.github.io/DSCI-524-Group_19_Missingness_Analyzer/CONTRIBUTING.html)
 
 ## **List of Functions**
 
-* type\_of\_missing\_and\_how
+-   `missing_how_type`
 
-  * This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR)
+    -   This function describes the amount of missing data in the dataset and attempts to identify the type of missingness (MCAR, MAR or MNAR). It will return
 
-  * Unit tests written for this function are: 
+-   `suggest_imputation`
 
-     * the_df()
+    -   This function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.
 
-     * the_result()
+-   `missing_correlation_matrix`
 
-     * test_number_of_truefalse()
+    -   This function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness
 
-     * test_raises_error_if_not_dataframe()
+## **Usage**
 
-     * test_if_alpha_is_optional(the_df, the_result)
+``` python
+from missingness_analyzer.type_of_missing_and_how import missing_how_type
+from missingness_analyzer.missing_correlation_matrix import missing_correlation_matrix
+from missingness_analyzer.suggest_imputation import suggest_imputation
 
-     * test_if_alpha_matter(the_df)
+df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
 
-     * test_return_none_if_no_missing()
+# suggest_imputation
+results = suggest_imputation(df)
+print(results['method']) 
+>>> KNNImputer (k=5)
 
-* suggest\_imputation
+# missing_correlation_matrix
+missing_correlation_matrix(df)
+>>>
+            age     income
+age         1.0     -0.5
+income      -0.5    1.0
 
-  * This function takes in the dataset and the type of missingness and parses the amount of missingness and datatypes in the dataframe to suggest an imputation strategy that would be best suited. The best suited method and reasoning is returned to the user in a dictionary format.
 
-  * Unit tests written for this function are: 
+# missing_how_type
+missing_how_type(df)
+>>>
+This data frame have 2 missing values, below is the number of missing values for each column:
+age        1
+income     1
+dtype: int64
 
-     * test_missingness_amount()
+- Columns with True value is Missing Completely at Random (MCAR)
+- Columns with False value are either Missing at Random (MAR) or Missing Not at Random (MNAR)
+- Since MAR and MNAR cannot be tested statistically and formally, additional domain expertise is needed for further investigation
 
-     * test_no_missing()
+        MCAR
+target  
+age     True
+income  True
+```
 
-     * test_duplicate_col_names()
+## Dataset Acknowledgement
 
-     * test_whole_column_missing()
+This project was developed using the following dataset:
+- Dataset name: [Retail Product Dataset with Missing Values](https://www.kaggle.com/datasets/himelsarder/retail-product-dataset-with-missing-values/data)
+- Source: Kaggle
+- License: CC0 1.0 Universal (Public Domain)
 
-* missing\_correlation\_matrix
+## Contributing
 
-  * This function takes a pandas dataframe as an argument and returns a correlation matrix of the amount of missingness to help identify the type of missingness
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this package.
 
-  * Unit tests written for this function are: 
+## Code of Conduct
 
-     * test_missing_corr_returns_dataframe()
+Please note that this project is released with a [Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-     * test_missing_corr_labels_match_input()
+## License
 
-     * test_missing_corr_diagonal()
+This project is licensed under the MIT License, please see [LICENSE](LICENSE) file for details.
+
+## Citation
+
+If you use this package, please cite as the following:
+
+Lee, R., Nguyen, N., & Li, S. (2026) *missingness-analyzer* (Version 0.5.0).\
+https://test.pypi.org/project/missingness-analyzer/
 
 ## **Python Ecosystem**
 
 Below is a summary of existing packages related to our topic:
 
-**scikit-na** (https://pypi.org/project/scikit-na/)
-This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.
+**`scikit-na`** (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.
 
-**mdatagen** (https://github.com/ArthurMangussi/pymdatagen)
-This GitHub repo contains a project for artificially generating data for missing fields.
+**`mdatagen`** (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.
 
-**Other Existing Packages** (e.g. deepchecks)
-Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold.
-What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on notonly the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data.
+**`Other Existing Packages`** (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on not only the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data.
