@@ -11,7 +11,7 @@ requires = ["hatchling", "hatch-vcs"]
 ################################################################################
 
 [project]
-name = "missingness_analyzer"
+name = "Missingness_Analyzer"
 dynamic = ["version"]
 
 description = "A package to identify the type of missingness in a dataframe and suggest imputation strategies"
