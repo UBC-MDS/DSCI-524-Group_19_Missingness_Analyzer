@@ -1,0 +1,14 @@
+---
+title: "Project Retrospective"
+---
+
+## Developing this Package
+
+This package mainly revolved around applying best practices of the Github workflow. A clear set of rules has been laid out and followed by each member throughout the project. Those being: Issues being used as a form of communication - Letting members know when new tasks are available, tracking who's doing what, and mapping associated issues with the pull request in which they were completed in. As the project's main focus is on applications in Pandas dataframes, a lot of the package was written in Python. However, Quarto served as a great tool to help visually render documentation in an aesthetically pleasing way and makes it easier if we decide to make a presentation out of our markdown files in the future. Github Actions was used as a CI/CD tool to ease the chore of manually integrating and deploying changes and new functionality to the web. It gave us the option to easily validate that all of our previous unit tests still passed when new functions were written, and automated the deployment of new features to the hosting service where our package is publically accessible (Test PyPI).
+
+## Scaling Up
+
+If we were given the task of scaling up this project, using the Git workflow versus the traditional Github workflow should provide a more streamlined collaboration process.
+Github would still be our version control system of choice, as it is what the Git workflow is based on. The main difference is that there would be a more ridgid approval process for suggesting and implementing new changes to the package. For example, a proper template would be in place to create new issues. This template would clearly outline where the suggestion/fix come from, and how implementing it would positively impact the package. Implementing this practice would also give clarity to specific components of the package that the suggestion/fix is targeted towards.
+For larger projects, the Kanban board would also take a more active role in agile devlopment practices. The Kanban board would not only be used to track each team member's current workload and document past work, it would also serve as a discussion board for cross team communication and workload re-balancing should a team memeber become absent during the project.
+A complete Ci/CD pipeline living on Github Actions would also have to be configured for a streamlined development process. This pipeline should handle everything but development of new features, such as ensuring backward compatability, edge case handling, and automatically updating all documentation (e.g. README, package website, package version on hosting platform, etc.).

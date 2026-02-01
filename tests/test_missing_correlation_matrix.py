@@ -5,9 +5,9 @@ import numpy as np
 import pytest
 
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.append(str(ROOT / "src"))
-from missingness_analyzer.missing_correlation_matrix import (missing_correlation_matrix,)
+# ROOT = Path(__file__).resolve().parents[1]
+# sys.path.append(str(ROOT / "src"))
+from missingness_analyzer import missing_correlation_matrix
 
 @pytest.fixture
 def the_df():
@@ -76,3 +76,24 @@ def test_if_all_missing():
 
     assert pd.isna(result.loc['col1', 'col2'])
 
+def test_if_no_missing():
+    """This test aims to confirm that the function is able to handle dataframes with no missing values"""
+
+    df = pd.DataFrame({
+    'col1': [1, 2],
+    'col2': [1, 2],
+    })
+
+    result = missing_correlation_matrix(df)
+
+    assert result.empty
+
+def test_non_dataframe_input():
+    """This is a test for correct handling of the input not being a dataframe"""
+
+    df = "hi"
+
+    with pytest.warns(UserWarning, match="Cannot compute missing correlations"):
+        result = missing_correlation_matrix(df)
+    
+    assert result.empty
