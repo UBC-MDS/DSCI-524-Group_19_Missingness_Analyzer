@@ -9,6 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-1. Add usage, fix hyperlink issues, add badges [here](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/issues/30)
+1. Add usage, fix hyperlink issues, add badges, according to this peer review [here](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/issues/30)
 
 PR for the [fix](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/pull/38)
