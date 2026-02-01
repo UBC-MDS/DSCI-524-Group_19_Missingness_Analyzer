@@ -31,7 +31,7 @@ Here's how to set up missingness_analyzer for local development:
 2.  Clone the fork locally using:
 
 ``` bash
-git clone git@github.com:your_name_here/missingness_analyzer.git
+git clone git@github.com:UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer.git
 ```
 
 3.  Create the virtual environment with:
