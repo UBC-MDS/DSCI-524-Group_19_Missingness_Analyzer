@@ -3,7 +3,7 @@
 |        |        |
 |--------|--------|
 | CI/CD  | ![CI](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/actions/workflows/build.yml/badge.svg) [![codecov](https://codecov.io/github/ubc-mds/dsci-524-group_19_missingness_analyzer/graph/badge.svg?token=Dg3l0WPYl9)](https://codecov.io/github/ubc-mds/dsci-524-group_19_missingness_analyzer) |
-| Package| ![Python](https://img.shields.io/pypi/pyversions/missingness-analyzer) |
+| Package| ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue) |
 | Meta   | [![Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) |
 
 
