@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2026-02-01T02:03:26.334Z</lastmod>
+    <lastmod>2026-02-01T20:28:02.515Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/type_of_missing_and_how.missing_how_type.html</loc>
-    <lastmod>2026-02-01T02:03:44.683Z</lastmod>
+    <lastmod>2026-02-01T20:28:22.059Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/missing_correlation_matrix.missing_correlation_matrix.html</loc>
-    <lastmod>2026-02-01T02:03:44.673Z</lastmod>
+    <lastmod>2026-02-01T20:28:22.048Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/index.html</loc>
-    <lastmod>2026-02-01T02:03:26.341Z</lastmod>
+    <lastmod>2026-02-01T20:28:02.521Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/CHANGELOG.html</loc>
+    <lastmod>2026-02-01T20:28:02.515Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/CONTRIBUTING.html</loc>
-    <lastmod>2026-02-01T02:03:26.334Z</lastmod>
+    <lastmod>2026-02-01T20:28:02.515Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/index.html</loc>
-    <lastmod>2026-02-01T02:03:44.647Z</lastmod>
+    <lastmod>2026-02-01T20:28:22.022Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/reference/suggest_imputation.suggest_imputation.html</loc>
-    <lastmod>2026-02-01T02:03:26.341Z</lastmod>
+    <lastmod>2026-02-01T20:28:02.522Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI-524-Group_19_Missingness_Analyzer/retrospective.html</loc>
-    <lastmod>2026-02-01T02:03:26.341Z</lastmod>
+    <lastmod>2026-02-01T20:28:02.522Z</lastmod>
   </url>
 </urlset>

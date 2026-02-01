@@ -154,6 +154,20 @@
     "text": "Below is a summary of existing packages related to our topic:\nscikit-na (https://pypi.org/project/scikit-na/) This is a package that contains functions for statistical analysis, building visuals and export capabilities for helping data scientists understand and handle missing values in their datasets.\nmdatagen (https://github.com/ArthurMangussi/pymdatagen) This GitHub repo contains a project for artificially generating data for missing fields.\nOther Existing Packages (e.g. deepchecks) Other packages like deepchecks have functions that can be used to write tests to detect if the amount of missing data in a dataset passes a set threshold. What differentiates our package from existing ones is the implementation of a smart imputation function which suggests an imputation method based on not only the type of missingness present in the dataframe, but also takes into account the datatypes of the columns in the dataframe. Also included are two helper functions which aid the user in identifying the type of missingness present in the input as well as a handy function to display a correlation matrix of the missing data."
   },
   {
+    "objectID": "CHANGELOG.html",
+    "href": "CHANGELOG.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning.\n\n\n\n\n\nAdd usage, fix hyperlink issues, add badges, according to this peer review here\n\nPR for the fix\n\nUpdated README with unique package features compared to existing similar packages, according to this peer review here\n\nPR for the fix"
+  },
+  {
+    "objectID": "CHANGELOG.html#latest-release",
+    "href": "CHANGELOG.html#latest-release",
+    "title": "Changelog",
+    "section": "",
+    "text": "Add usage, fix hyperlink issues, add badges, according to this peer review here\n\nPR for the fix\n\nUpdated README with unique package features compared to existing similar packages, according to this peer review here\n\nPR for the fix"
+  },
+  {
     "objectID": "CONTRIBUTING.html",
     "href": "CONTRIBUTING.html",
     "title": "Contributing to MissingnessAnalyzer",
