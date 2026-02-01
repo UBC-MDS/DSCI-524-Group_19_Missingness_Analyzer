@@ -11,7 +11,7 @@ requires = ["hatchling", "hatch-vcs"]
 ################################################################################
 
 [project]
-name = "Missingness_Analyzer"
+name = "missingness_analyzer"
 dynamic = ["version"]
 
 description = "A package to identify the type of missingness in a dataframe and suggest imputation strategies"
@@ -51,7 +51,7 @@ Homepage = "https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer"
 "Source Code" = "https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/tree/main/src/missingness_analyzer"
 "Bug Tracker" = "https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/tree/main/src/missingness_analyzer/issues"
 Documentation = "https://github.com/ilyamusabirov/524-testdemo/blob/main/README.md"
-Download = "https://pypi.org/project/vancouver_survival/#files"
+Download = "https://pypi.org/project/missingness_analyzer/#files"          ###############
 
 [project.optional-dependencies]
 # The groups below should be in the [development-groups] table
@@ -113,8 +113,8 @@ markers = ["raises"] # Tells pytest to not raise a warning if you use @pytest.ma
 
 [tool.coverage.paths]
 source = [
-    "src/vancouver_survival",
-    "*/site-packages/vancouver_survival",
+    "src/missingness_analyzer",       #########
+    "*/site-packages/missingness_analyzer", ##########
 ]
 
 [tool.coverage.run]
@@ -164,7 +164,7 @@ features = [
 python = ["3.10", "3.11", "3.12", "3.13"]
 
 [tool.hatch.envs.test.scripts]
-run = "pytest {args:--cov=vancouver_survival --cov-report=term-missing --cov-report=xml}"
+run = "pytest {args:--cov=missingness_analyzer --cov-report=term-missing --cov-report=xml}"           ################
 
 #--------------- Build and preview your documentation ---------------#
 
@@ -181,7 +181,7 @@ features = [
 # hatch run docs:serve will serve them 'live' on your computer locally
 [tool.hatch.envs.docs.scripts]
 build = ["sphinx-build {args:-W -b html docs docs/_build}"]
-serve = ["sphinx-autobuild docs --watch src/vancouver_survival {args:-b html docs/_build/serve}"]
+serve = ["sphinx-autobuild docs --watch src/missingness_analyzer {args:-b html docs/_build/serve}"]  #################
 
 
 
