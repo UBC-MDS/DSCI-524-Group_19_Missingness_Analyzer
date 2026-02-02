@@ -33,6 +33,10 @@ Here's how to set up missingness_analyzer for local development:
 ``` bash
 git clone git@github.com:UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer.git
 ```
+Then please cd into the root of the repo by:
+```bash
+cd DSCI-524-Group_19_Missingness_Analyzer
+```
 
 3.  Create the virtual environment with:
 
@@ -93,6 +97,8 @@ pytest
 from missingness_analyzer.type_of_missing_and_how import missing_how_type
 from missingness_analyzer.missing_correlation_matrix import missing_correlation_matrix
 from missingness_analyzer.suggest_imputation import suggest_imputation
+import pandas as pd
+import numpy as np
 
 df = pd.DataFrame({'age': [25, np.nan, 35], 'income': [50000, 60000, np.nan]})
 
