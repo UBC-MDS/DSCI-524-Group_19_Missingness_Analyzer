@@ -39,4 +39,12 @@ By contributing, you agree to abide by our [Code of Conduct](https://github.ubc.
 
 If you have any questions, feel free to reach out to open an issue for assistance.
 
+Or you can contact the contributor, the emails is here:
+
+Rocco Lee: roccolee18@gmail.com
+
+Nguyen Nguyen: nguyenuyennguyen03@gmail.com
+
+LI SHUHANG: lshfan123456@gmail.com
+
 Thank you for helping make MissingnessAnalyzer great!

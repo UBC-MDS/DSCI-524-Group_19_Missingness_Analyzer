@@ -4,7 +4,7 @@ def missing_correlation_matrix(df):
     """
     Calculate correlations between variables' missingness patterns.
 
-    For each column in `df`, this function constructs a binary indicator
+    Each column in `df`, this function constructs a binary indicator
     (1 = value is missing, 0 = value is observed) and computes the
     pairwise correlation matrix of these indicators. High positive
     correlations flag variables that tend to be missing at the same time,
