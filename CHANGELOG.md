@@ -16,3 +16,7 @@ PR for the [fix](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyz
 2. Updated README with unique package features compared to existing similar packages, according to this peer review [here](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/issues/27)
 
 PR for the [fix](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/pull/28)
+
+3. Updated CONTRIBUTING.md with contact information for the developers for easy communication, according to this peer review [here](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/issues/34)
+
+PR for the [fix](https://github.com/UBC-MDS/DSCI-524-Group_19_Missingness_Analyzer/pull/48)
